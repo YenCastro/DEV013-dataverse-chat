@@ -1,3 +1,5 @@
+//En este documento estan mis funciones donde le doy valor a las variables ROUTES Y rootElement
+
 let ROUTES ={};
 let rootElement = '';//es la refrencia a nuestro HTML
 
@@ -6,26 +8,34 @@ export const setRootElement = (newRootElementValue) => {
   }
   
 
-  export const setRoutes = (newroutesValue) => {
-    ROUTES = newroutesValue;
-    const renderView =(pathname, props={}) =>{
-      //limpiar el root elemeto 
-      const root = rootElement;
-      root.inerHTML='';
-      if (ROUTES[pathname]){
-        const template = ROUTES[pathname]();
-        root.appentchile(template);
-      } else{
-        root.appentchile(ROUTES['/error']());
+  export const setRoutes = (newRoutesValue) => {
+    if (typeof newRoutesValue === "object"){
+      if(newRoutesValue["/Home"]){
+          ROUTES = newRoutesValue;
       }
     }
-  }
+}
+
+
+    const renderView =(pathname, props = {}) =>{
+    const root = rootElement;
+      root.innerHTML = '';
+      if (ROUTES[pathname]){
+        const template = ROUTES[pathname](props);
+        root.appendChild(template);
+      } else{
+        root.appendChild(ROUTES['/Home'](props));
+      }
+    }
+  
   export const navigateto =(pathname,props ={}) =>{
     const URLVisited =window.location.hostname + pathname;
     history.pushState({}, "", URLVisited);
     renderView(pathname,props);
   }
 
-  export const onURLChange = (pathname) =>{
-    renderView(pathname);
+  export const onURLChange = (location) =>{
+ renderView(location);
   }
+
+
