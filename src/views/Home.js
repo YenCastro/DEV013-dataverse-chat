@@ -1,4 +1,3 @@
-
 export const Home = (data) => {
   const ul = document.createElement('ul')
   ul.classList.add('Contenedor')//agregamos una clase a el elemneto ul
@@ -31,4 +30,3 @@ export const Home = (data) => {
   }
   return ul
 };
-
