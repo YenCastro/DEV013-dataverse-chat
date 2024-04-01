@@ -6,7 +6,6 @@ import { Error } from './views/Error.js';
 import { setRoutes, setRootElement, onURLChange } from './router.js';
 
 const routes = {
-  "/": Home,
   "/Home": Home,
   "/ChatTeam": ChatTeam,
   "/PrivateChat": PrivateChat,
