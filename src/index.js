@@ -4,6 +4,7 @@ import { ChatTeam } from './views/ChatTeam.js';
 import { PrivateChat } from './views/PrivateChat.js';
 import { Error } from './views/Error.js';
 import { setRoutes, setRootElement, onURLChange } from './router.js';
+
 const routes = {
   "/": Home,
   "/Home": Home,

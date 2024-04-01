@@ -1,7 +1,7 @@
 export const PrivateChat = () => {
     const container = document.createElement('div');
     container.innerHTML = `
-      <h2>Chat Grupal</h2>
+      <h2>Chat Privado</h2>
       <div id="chat-messages">
         <!-- Aquí se mostrarán los mensajes del chat -->
       </div>

@@ -1,5 +1,5 @@
-// Es mi pagina de home en donde debo renderisar mi data de solo la vista Home
-  export const Home = (data) => {
+
+export const Home = (data) => {
   const ul = document.createElement('ul')
   ul.classList.add('Contenedor')//agregamos una clase a el elemneto ul
   for (let i = 0; i < data.length; i++) {
