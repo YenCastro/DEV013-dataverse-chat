@@ -1,21 +1,21 @@
+
 let ROUTES = {}; // Contiene todas las rutas que se harán en el proyecto, las mapea.
 let rootElement = ''; // Almacena información sobre las rutas en el SPA.
 
 
 // Valida si newRootElement es un objeto del HTML
 export const setRootElement = (newRootElementValue) => {
-  rootElement = newRootElementValue;
-};
-
-
-// Asignar rutas // Lanzar errores si rutas no es un objeto // Lanzar errores si las rutas no definen una ruta 
-export const setRoutes = (newRoutesValue) => {
-  if (typeof newRoutesValue === "object"){
-    if (newRoutesValue["/Error"]){
-      ROUTES = newRoutesValue;
-    }
+    rootElement = newRootElementValue ;
   }
-};
+  
+// Asignar rutas // Lanzar errores si rutas no es un objeto // Lanzar errores si las rutas no definen una ruta 
+  export const setRoutes = (newRoutesValue) => {
+    if (typeof newRoutesValue === "object"){
+      if(newRoutesValue["/Home"]){
+          ROUTES = newRoutesValue;
+      }
+    }
+}
 
 // Vacía elemento root. Encuentra la vista correcta entre el pathname y la ruta a renderizar. Cargar vista error. Renderizar componente.
   const renderView = (pathname, props = {}) => {
@@ -29,9 +29,7 @@ export const setRoutes = (newRoutesValue) => {
       root.appendChild(ROUTES['/Error']());
     }
   };
-
-
-
+  
 // Actualizar el historial de navegador a partir del contenido visitado en el sitio web.
 export const navigateto = (pathname, props = {}) => {
   const URLVisited = window.location.hostname + pathname;
@@ -44,3 +42,5 @@ export const navigateto = (pathname, props = {}) => {
 export const onURLChange = (pathname) => {
   renderView (pathname);
 }
+
+

@@ -1,20 +1,28 @@
-import { Home } from "./views/Home.js";
-import {IndividualChat} from "./views/IndividualChat.js";
-import { GroupChat } from "./views/GroupChat.js";
-import { Error } from "./views/Error.js";
+//aqui importo mis funciones de router.js que me ayudan a ver mi pagina despues de entrar al URL
+import { Home } from './views/Home.js';
+import { ChatTeam } from './views/ChatTeam.js';
+import { PrivateChat } from './views/PrivateChat.js';
+import { Error } from './views/Error.js';
 import { setRoutes, setRootElement, onURLChange } from './router.js';
 
-//This is a dictionary *
 const routes = {
-    "/Home": Home,
-    "/Error": Error,
-    "/Group": GroupChat,
-    "/Individual": IndividualChat,
-  };
+  "/": Home,
+  "/Home": Home,
+  "/ChatTeam": ChatTeam,
+  "/PrivateChat": PrivateChat,
+  "/Error": Error,
+};
 
-const viewContainer = document.getElementById('root');
+
+const viewContanier = document.getElementById('root');
 setRoutes(routes);
-setRootElement(viewContainer);
+setRootElement(viewContanier);
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log("DOM full loaded and parsed");
+  console.log(event.target.location.pathname);
+  onURLChange(event.target.location.pathname);
+});
+
 
 // Trae el  HTML y ejecuta los scripts.
 document.addEventListener("DOMContentLoaded", (event) =>{
@@ -24,6 +32,5 @@ window.addEventListener("popstate", (event) => {
     onURLChange(event.target.location.pathname);
     });
 });
-
 
 

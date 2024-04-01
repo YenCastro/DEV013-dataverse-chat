@@ -1,5 +1,7 @@
-export const Error =() =>{
-    const ErrorView = document.createElement('p');
-    ErrorView.innerHTML="Error";
-    return ErrorView;
-};
+export const Error = ()=>{
+const p = document.createElement ('P');
+p.innerHTML = "Error 404 pagina no encontrada";
+return p;
+
+}
+
