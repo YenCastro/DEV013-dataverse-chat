@@ -1,4 +1,4 @@
-export default [
+export const data = [
     {
       "id": "Pinocho",
       "name": "Pinocho",
@@ -42,7 +42,7 @@ export default [
       "id": "LiebreYTortuga",
       "name": "La Liebre y la Tortuga",
       "shortDescription": "Personajes de la famosa fábula",
-      "description": "Huga la Tortuga es un encantador cuento para niños escrito por Diane Redfield Massie. La historia sigue a Huga, una tortuga que sueña con explorar el mundo más allá de su hogar en el océano. A pesar de las dudas y burlas de sus amigos, Huga persevera y emprende un emocionante viaje. En su aventura, descubre la importancia del valor, la determinación y la autoaceptación. A través de ilustraciones coloridas y una narrativa cautivadora, este cuento inspira a los lectores a seguir sus sueños y creer en sí mismos.",
+      "description": "Fábula clásica que narra la historia de una carrera entre dos animales muy diferentes: una rápida liebre y una lenta tortuga. A pesar de la confianza excesiva de la liebre en su velocidad, la tortuga persistente y constante finalmente gana la carrera. Esta historia enseña la lección atemporal de que la constancia y el esfuerzo superan a la arrogancia y la complacencia.",
       "imageUrl": "https://th.bing.com/th/id/OIG.22ARtDnxN8DdvuwaTf3B?pid=ImgGn",
       "facts": {
         "curiousFact1": "Fábula atribuida a Esopo",
@@ -56,7 +56,7 @@ export default [
       "name": "El Huevo que Pia",
       "shortDescription": "Un huevo especial con sorpresa",
       "description": "El Huevo que pía es un cuento clásico infantil, donde un grupo de animales se encuentra un misterioso huevo en el bosque. Ninguno sabe qué animal podría salir de él, pero todos están emocionados por descubrirlo. Durante días, observan el huevo con ansias hasta que finalmente se rompe y nace... un pequeño patito. Al principio, los animales se sienten decepcionados, pero luego aprenden a aceptar y amar al patito, quien resulta ser muy especial. La historia enseña valores de tolerancia, aceptación y amor por la diferencia, mostrando que lo que parece diferente puede ser maravilloso.",
-      "imageUrl": "https://th.bing.com/th/id/OIG.cJTRrmCVSPuCqzwD5a9V?pid=ImgGnhttps://th.bing.com/th/id/OIG.cJTRrmCVSPuCqzwD5a9V?pid=ImgGn",
+      "imageUrl": "https://th.bing.com/th/id/OIG.cJTRrmCVSPuCqzwD5a9V?pid=ImgGn",
       "facts": {
         "curiousFact1": "Fuente de asombro en la granja",
         "curiousFact2": "Siempre rodeado de misterio",
@@ -81,7 +81,7 @@ export default [
       "id": "OsitoCurioso",
       "name": "El Osito Curioso",
       "shortDescription": "Aventuras de un osito que ama aprender",
-      "description": "El Patito Feo es un cuento clásico de Hans Christian Andersen. Cuenta la historia de un patito que, desde su nacimiento, es objeto de burlas y rechazo debido a su aspecto diferente y poco agraciado. Después de sufrir numerosas adversidades y ser rechazado por los demás animales de la granja, el patito decide huir en busca de un lugar donde ser aceptado. Tras un largo viaje, descubre que es un cisne, una de las aves más hermosas y admiradas. La historia enseña valiosas lecciones sobre la autoaceptación, la perseverancia y la belleza interior.",
+      "description": "El Osito Curioso es un cuento infantil que sigue las aventuras de un osito y sus amigos en el bosque. A través de sus travesuras, el osito enseña lecciones sobre amistad, valentía y curiosidad, todo mientras exploran y resuelven problemas juntos. Es una historia encantadora con ilustraciones cautivadoras que inspiran la imaginación de los niños y les brindan momentos de diversión y aprendizaje",
       "imageUrl": "https://th.bing.com/th/id/OIG.ooZJ3fAbRb4qUtqYHx65?pid=ImgGn",
       "facts": {
         "curiousFact1": "Siempre lleva consigo su mochila de explorador",
@@ -229,7 +229,7 @@ export default [
       "facts": {
         "curiousFact1": "Utiliza migas de pan para encontrar su camino",
         "curiousFact2": "Amigos animales le ayudan en sus travesías",
-        "genero": "Literatura infantil",
+        "genero": "Cuento de hadas",
         "RangoDeEdad": "Todas las edades"
       }
     },
