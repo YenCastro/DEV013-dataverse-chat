@@ -22,3 +22,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
   console.log(event.target.location.pathname);
   onURLChange(event.target.location.pathname);
 });
+
+
+// Trae el  HTML y ejecuta los scripts.
+document.addEventListener("DOMContentLoaded", (event) =>{
+    onURLChange(event.target.location.pathname);
+
+window.addEventListener("popstate", (event) => {
+    onURLChange(event.target.location.pathname);
+    });
+});
+
+

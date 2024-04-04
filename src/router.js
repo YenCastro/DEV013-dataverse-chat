@@ -1,13 +1,14 @@
-//En este documento estan mis funciones donde le doy valor a las variables ROUTES Y rootElement
 
-let ROUTES ={};
-let rootElement = '';//es la refrencia a nuestro HTML
+let ROUTES = {}; // Contiene todas las rutas que se harán en el proyecto, las mapea.
+let rootElement = ''; // Almacena información sobre las rutas en el SPA.
 
+
+// Valida si newRootElement es un objeto del HTML
 export const setRootElement = (newRootElementValue) => {
     rootElement = newRootElementValue ;
   }
   
-
+// Asignar rutas // Lanzar errores si rutas no es un objeto // Lanzar errores si las rutas no definen una ruta 
   export const setRoutes = (newRoutesValue) => {
     if (typeof newRoutesValue === "object"){
       if(newRoutesValue["/Home"]){
@@ -16,26 +17,30 @@ export const setRootElement = (newRootElementValue) => {
     }
 }
 
-
-    const renderView =(pathname, props = {}) =>{
+// Vacía elemento root. Encuentra la vista correcta entre el pathname y la ruta a renderizar. Cargar vista error. Renderizar componente.
+  const renderView = (pathname, props = {}) => {
     const root = rootElement;
-      root.innerHTML = '';
-      if (ROUTES[pathname]){
-        const template = ROUTES[pathname](props);
-        root.appendChild(template);
-      } else{
-        root.appendChild(ROUTES['/Home'](props));
-      }
+    root.innerHTML = '';
+// Encontrar vista correcta por el pathname.
+    if (ROUTES[pathname]) {
+      const template = ROUTES[pathname](props);
+      root.appendChild(template);
+    } else {
+      root.appendChild(ROUTES['/Error']());
     }
+  };
   
-  export const navigateto =(pathname,props ={}) =>{
-    const URLVisited =window.location.hostname + pathname;
-    history.pushState({}, "", URLVisited);
-    renderView(pathname,props);
-  }
+// Actualizar el historial de navegador a partir del contenido visitado en el sitio web.
+export const navigateto = (pathname, props = {}) => {
+  const URLVisited = window.location.hostname + pathname;
+  history.pushState({}, "", URLVisited);
+  renderView(pathname, props);
+};
 
-  export const onURLChange = (location) =>{
- renderView(location);
-  }
+
+// Analiza la ubicación de la ruta y los parámetros de búsqueda // convierte los parámetros de búsqueda en un objeto // renderiza la vista con la ruta y el objeto
+export const onURLChange = (pathname) => {
+  renderView (pathname);
+}
 
 
