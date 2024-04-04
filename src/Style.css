@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 
-
 body {
-  font-family: "Poppins", sans-serif;
+  
   margin: 0;
   padding: 0;
   background-image: url(assets/img/bienvenida.png);
@@ -75,6 +74,7 @@ footer {
 }
 
 .seccion {
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
   padding: 320px;
@@ -376,4 +376,66 @@ label {
     padding: 1px;
     /* Ajuste del padding para pantallas pequeñas */
   }
+}
+
+/*Estilos de vista PrivateChat*/
+/*conten priv es nuestro encabezado*/
+.container{
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;/* 3 columnas de igual tamaño*/
+ margin: 50px;
+}
+/* estilos del grid layout*/
+/* boton de cerrado*/
+.image-container{
+  grid-column: 1;/*la imagen con la informacion ocupara la primera columna*/
+  background-color: #eaf2f3;
+  border: 1px solid black;
+}
+/*Diseño de solo imagen*/
+#imagen{
+border-radius: 40%;
+width: 150px;
+height: 150px;
+margin-top: 50px;
+margin-left: 60px;
+}
+/*estilo para el contenedor del chat */
+.chat-container{
+  grid-column: 2 /span 2; /*el contenedor ocupara desdde 2 columna hasta fina0l */
+  background-color:rgb(255, 255, 255);
+  text-align: center;
+  width: 200px;
+  height: 30px;
+  padding: 30%;
+  border: 1px solid black;
+}
+/*estilo para el contenedor del input y boton de enviar*/
+#input-container{
+  grid-column: 2 / span 2;/* el contenedor del input y boton enviar sera desde la segunda columna hasta el final */
+background-color: #bec3df;
+margin-top: -70px;
+height: 70px;
+width: 769px;
+border: 1px solid black;
+}
+#message-input{
+  position: relative; /* Fija el elemento en la ventana del navegador */
+  right: -50px; /* Posición a 20px del borde derecho */
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 540px;
+  height:30px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+#send-button{
+  border-radius: 30%;
+  background-color: rgb(156, 127, 127);
+  position: relative;
+  right: -100px;
+  top: 35px;
+  transform: translateY(-125%);
+width: 65px;
+height: 30px;
 }
