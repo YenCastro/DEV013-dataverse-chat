@@ -2,7 +2,7 @@ let ROUTES = {}; // Contiene todas las rutas que se harán en el proyecto, las m
 let rootElement = ''; // Almacena información sobre las rutas en el SPA.
 
 
-// Valida si newRootElement es un objeto del HTML
+// Valida si newRootElement es un objeto del HTML.
 export const setRootElement = (newRootElementValue) => {
   rootElement = newRootElementValue;
 };

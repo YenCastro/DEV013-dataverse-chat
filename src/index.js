@@ -4,7 +4,7 @@ import { ChatTeam } from './views/ChatTeam.js';
 import { PrivateChat } from './views/PrivateChat.js';
 import { Error } from './views/Error.js';
 import { setRoutes, setRootElement, onURLChange } from './router.js';
-//import {data} from './data/dataset.js'; // Importa los datos primero
+//import {data} from './data/dataset.js'; // Importa los datos primero.
 
 const routes = {
   "/": Home,

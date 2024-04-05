@@ -16,7 +16,7 @@ export function Home() {
   <button id="scrollButton">Deslizar</button>
   </div>
   `
-  // Agregamos una clase a el elemento viewEl
+  // Agregamos una clase a el elemento viewEl.
   viewEl.classList.add('Contenedor')
   for (let i = 0; i < data.length; i++) {
     const element = data[i];
