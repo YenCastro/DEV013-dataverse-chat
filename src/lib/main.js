@@ -13,7 +13,7 @@ const orderBook = document.querySelector("#orderad");
 filteredData = [...data];
 
 
-// Evento change para el elemento select, género.
+// Evento change para el elemento select, género
 selectElement.addEventListener("change", ()=>{
   const selectGender = selectElement.options[selectElement.selectedIndex].value
   /*console.log(selectGender);*/
