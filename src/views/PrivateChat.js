@@ -5,7 +5,8 @@ export const PrivateChat = () => {
     <div class="container">
       <button class="cerrar" aria-label="Cerrar">✖️</button>
       <div class="image-container">
-        <img src=https://th.bing.com/th/id/OIG.Hx9k0_XgQwnbWEsPAQnf?pid=ImgGn.jpg" id="imagen" alt="Imagen">
+        <img src="https://th.bing.com/th/id/OIG.Hx9k0_XgQwnbWEsPAQnf?pid=ImgGn.jpg" id="imagen" alt="Imagen">
+        <p> Informacion renderizada jijijijijijijijijijijijijijijijijijijijijiijijijijijijiijij </p>
       </div>
       <div class="chat-container">
         <div class="chat-messages" id="chat-messages">
