@@ -1,12 +1,13 @@
-export const PrivateChat = () => {
+import { footer } from "../components/footer.js";
+export const PrivateChat = (data) => {
     const container = document.createElement('div');
     container.innerHTML = `   
     <body>
     <div class="container">
       <button class="cerrar" aria-label="Cerrar">✖️</button>
       <div class="image-container">
-        <img src="https://th.bing.com/th/id/OIG.Hx9k0_XgQwnbWEsPAQnf?pid=ImgGn.jpg" id="imagen" alt="Imagen">
-        <p> Informacion renderizada jijijijijijijijijijijijijijijijijijijijijiijijijijijijiijij </p>
+        <img src="${element.imageUrl} id="imagen" alt="Imagen">
+        <p>${element.shortDescription} </p>
       </div>
       <div class="chat-container">
         <div class="chat-messages" id="chat-messages">
@@ -20,7 +21,8 @@ export const PrivateChat = () => {
       
     </div>
     `;
-  
+ //const selectedStory=data[selectedStory];
+ //const PrivateChatContainer = PrivateChat(selectedStory); 
     // Aquí puedes agregar la lógica para enviar mensajes, manejar eventos, etc.
   
     return container;
