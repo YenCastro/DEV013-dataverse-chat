@@ -1,13 +1,22 @@
-import { footer } from "../components/footer.js";
-export const PrivateChat = (data) => {
+
+ import { data } from "../data/dataset.js";
+  import { footer } from "../components/footer.js";
+export const PrivateChat = (storyName) => { //mi paremtro de entrada sera el nombre y de ahi tendra la data como en home storyname
     const container = document.createElement('div');
+    //buaca el cuento en los datos
+    const story = data.find(story => story.name === storyName); // lo que esta dentro d emi storyNmae sea igual al name de mi data 
+    if(!story){
+      container.innerHtml =`<p> El cuento "${storyName}" no se encontro.</p>`
+    return container;
+    }
+//recuerda que ahora tu cuneto a sido almacenado en story
     container.innerHTML = `   
     <body>
     <div class="container">
       <button class="cerrar" aria-label="Cerrar">✖️</button>
       <div class="image-container">
-        <img src="${element.imageUrl} id="imagen" alt="Imagen">
-        <p>${element.shortDescription} </p>
+        <img src="${story.imageUrl}" id="imagen" alt="Imagen">
+        <p>${story.shortDescription} </p>
       </div>
       <div class="chat-container">
         <div class="chat-messages" id="chat-messages">
@@ -21,9 +30,7 @@ export const PrivateChat = (data) => {
       
     </div>
     `;
- //const selectedStory=data[selectedStory];
- //const PrivateChatContainer = PrivateChat(selectedStory); 
-    // Aquí puedes agregar la lógica para enviar mensajes, manejar eventos, etc.
-  
+
+ container.appendChild(footer()); 
     return container;
 }
