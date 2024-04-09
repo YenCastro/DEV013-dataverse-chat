@@ -56,14 +56,20 @@ export const Home = () => {
   //CleanButton
   clearButton.addEventListener('click', function () {
     bookData.innerHTML = "";//limpia contenedor
+  
+    newData=[...data];
     bookData.appendChild(renderData(newData)); // Renderiza de nuevo la data original
-    
     selectElement.selectedIndex = 0;
     selectAge.selectedIndex = 0;
     orderBook.selectedIndex = 0;
     console.log(orderBook.selectedIndex);
   });
-
   return viewHome;
-
 }
+
+
+
+
+
+
+

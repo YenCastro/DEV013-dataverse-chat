@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 
-
 body {
-  font-family: "Poppins", sans-serif;
+  
   margin: 0;
   padding: 0;
   background-color: white;
@@ -103,6 +102,7 @@ p {
   padding: 66px;
 }
 
+
 h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 30px;
@@ -150,6 +150,10 @@ footer {
   font-weight: 30;
   font-size: 30px;
   color: #ffffff;
+}
+
+
+.seccion3 {
   padding: 520px;
   background-repeat: no-repeat;
   /* Espacio alrededor del contenido */
@@ -162,6 +166,12 @@ footer {
   /* Fijar la imagen al fondo */
 }
 
+
+/*Animacion de tarjeta */
+.card:hover {
+  height: auto;
+  flex-basis: 450px;
+}
 
 .cardContainer{
 /*Las tarjetas */
@@ -186,15 +196,9 @@ list-style: none;
   list-style: none;
 }
 
-/*Animacion de tarjeta */
-.card:hover {
-  height: auto;
-  flex-basis: 450px;
-}
-
 /* Diseño de la  data de SegundaCara */
 .card .SegundaCara {
-  position: absolute;
+  /* position: absolute; */ 
   top: 100%;
   left: 0;
   width: 350px;
@@ -212,37 +216,6 @@ list-style: none;
 
 
 }
-
-/*hover es un pseudo-selector en CSS*/
-.card:hover .SegundaCara {
-  top: 0;
-}
-
-/*Diseño de primera cara */
-.PrimeraCara {
-  position: relative;
-}
-
-
-
-/* Diseño de solo la imagen */
-#Img {
-  /*color de borde para imagen*/
-  width: 370px;
-  /*Ancho de mi imagen*/
-  height: 335px;
-  /*Largo d emi imagen*/
-  border-radius: 8%;
-  /* Tipo de brode de mi imagen*/
-
-}
-
-
-
-
-
-/*Termina animacion de SegundaCara*/
-
 /*Se crea las colmnas*/
 .filterContainer {
   border: 1px, solid black;
@@ -396,4 +369,87 @@ border-radius: 9999rem;
     padding: 1px;
     /* Ajuste del padding para pantallas pequeñas */
   }
+}
+
+/*Estilos de vista PrivateChat*/
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;/* 3 columnas de igual tamaño*/
+ margin-left: 200px;
+}
+/* estilos del grid layout*/
+/* boton de cerrado*/
+.cerrar{
+  width: 50px;
+  height: 30px;
+  margin-top: -20px;
+}
+/*contenedor de imagen*/
+.image-container{
+  grid-column: 1;/*la imagen con la informacion ocupara la primera columna*/
+  background-color: #eaf2f3;
+  border: 1px solid black;
+  border-bottom-left-radius: 2%;
+  border-top-left-radius: 2%;
+}
+/*Diseño de el parrafo de inoformacion*/
+.image-container p {
+    color: #00050a;
+    margin: 80px;
+    width: 200px;
+    height: 170px;
+    text-align: center; /* Alinea el texto al centro */
+    font-size: calc(1vw + 1vh); /* Tamaño de fuente relativo al ancho y alto del contenedor */
+    background-color: #026cc265; /* Color de fondo para el párrafo */
+    padding: 10px; /* Añade un espacio alrededor del contenido del párrafo */
+    border: 1px solid black;
+}
+/*Diseño de solo imagen*/
+#imagen{
+border-radius: 40%;
+width: 230px;
+height: 230px;
+margin: 40px
+/*margin-top: 30px;
+margin-left: 60px;*/
+}
+/*estilo para el contenedor del chat */
+.chat-container{
+  grid-column: 2 /span 2; /*el contenedor ocupara desdde 2 columna hasta fina0l */
+  background-color:rgb(135, 157, 170);
+  text-align: center;
+  width: 240px;
+  height: 140px;
+  padding: 30%;
+  border: 1px solid black;
+}
+/*estilo para el contenedor del input y boton de enviar*/
+#input-container{
+  grid-column: 2 / span 2;/* el contenedor del input y boton enviar sera desde la segunda columna hasta el final */
+background-color: #bec3df;
+margin-top: -70px;
+height: 65px;
+width: 760px;
+border: 1px solid black;
+}
+#message-input{
+  position: relative; /* Fija el elemento en la ventana del navegador */
+  right: -50px; /* Posición a 20px del borde derecho */
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 540px;
+  height:30px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+#send-button{
+  border-radius: 30%;
+  background-color: rgb(156, 127, 127);
+  position: relative;
+  right: -100px;
+  top: 35px;
+  transform: translateY(-125%);
+width: 65px;
+height: 30px;
 }
