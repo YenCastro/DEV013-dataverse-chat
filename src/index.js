@@ -1,4 +1,4 @@
-//aqui importo mis funciones de router.js que me ayudan a ver mi pagina despues de entrar al URL
+// Aqui importo mis funciones de router.js que me ayudan a ver mi pagina despues de entrar al URL
 import { Home } from './views/Home.js';
 import { ChatTeam } from './views/ChatTeam.js';
 import { PrivateChat } from './views/PrivateChat.js';

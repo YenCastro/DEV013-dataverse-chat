@@ -1,3 +1,6 @@
+import { homeButton } from "../components/ButtonHome.js";
+import { footer } from "../components/footer.js";
+
 export const PrivateChat = () => {
     const container = document.createElement('div');
     container.innerHTML = `

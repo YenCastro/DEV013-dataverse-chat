@@ -6,65 +6,143 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url(./img/bienvenida.png);
+  background-color: white;
+}
+
+.filters {
+  background: #00050a;
+  color: white;
+  height: auto;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  left: 0;
+  right: 0; /* Agregado para que la barra ocupe todo el ancho */
+  top: 0;
+  position: fixed;
+  z-index: 9999;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /*FlexBox*/
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos en los extremos */
+  align-items: center;
+}
+
+#filter {
+  font-weight: 15;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+#order {
+  font-weight: 15;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+#orderad {
+  font-weight: 15;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+
+.seccionHome{
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  background-image: url(/img/bienvenida.png);
   background-repeat: no-repeat;
-  background-attachment: scroll;
   width: 100%;
   height: 100vh;
   max-width: 1900px;
-  padding-top: 80px;
-  background-size: cover;
-  /* Ajusta la imagen para cubrir todo el contenido visible */
-  background-position: center;
-  /* Centra la imagen de fondo. */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenido visible */
+  background-position: center; /* Centra la imagen de fondo */
+}
+
+.seccionHome h1{
+text-align: center; /* Centra el texto horizontalmente */
+margin: 0; /* Elimina los márgenes por defecto */
+
+}
+.seccionHome p {
+  text-align: center; /* Centra el texto horizontalmente */
+  margin: 0; /* Elimina los márgenes por defecto */
+
 }
 
 h1 {
 
   font-family: "Cinzel", serif;
-  font-weight: 620;
-  text-align: center;
+  font-weight: 600;
   font-size: 130px;
   color: #ffffff;
   text-shadow:
     1px 1px 2px rgb(255, 115, 1),
     0 0 1em rgb(243, 243, 243),
     0 0 0.2em rgb(255, 249, 247);
-  padding: 1px;
-  margin-top: -300px;
-
+  padding: -60px;
 }
 
 p {
   font-family: 'Poppins', sans-serif;
   margin-top: -490px;
-  text-align: center;
   font-size: 30px;
   color: #e0d3cd;
   text-shadow:
     1px 1px 2px rgb(255, 102, 0),
     0 0 1em rgb(255, 143, 6),
     0 0 0.2em rgb(248, 49, 49);
-  padding: 390px;
   white-space: nowrap;
+  padding: 66px;
 }
 
-#icon-menu {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  right: 20px;
-  top: 16px;
-  padding: 10px;
-  font-size: 20px;
-  background: #eeeeeefa;
-  border-radius: 100%;
-  color: #787878;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
 }
+
+.PrimeraCara h2 {
+  position: absolute;
+  bottom: -360px; /* Ajusta la distancia del texto desde la parte inferior */
+  left: 0; /* Alinea el texto a la izquierda */
+  right: 0; /* Ajusta el ancho del texto al ancho de la tarjeta */
+  text-align:left;
+  font-size: 1.9vw;
+  color: #ffffff;
+  background-color: rgba(54, 52, 54, 0.671);
+  border-radius:20%;
+  padding: 33px;
+  width: 300px;
+}
+
+.ViewChat {
+  position: absolute;
+  bottom: -70px; /* Ajusta la distancia desde la parte inferior de la tarjeta */
+  right: 40px; /* Ajusta la distancia desde el borde derecho de la tarjeta */
+  width: 50px; /* Ancho del botón de chat */
+  height: 50px; /* Altura del botón de chat */
+  color: #f78c00; /* Color del texto del botón de chat */
+  border: none; /* Elimina el borde del botón de chat */
+  border-radius: 100%; /* Borde redondeado del botón de chat */
+}
+
+.buttonHomeIcon {
+  z-index: 2;
+position: relative;
+display: flex;
+color: var(--white);
+background-color: var(--blue);
+border: 0.15rem solid var(--white);
+border-radius: 9999rem;
+}
+
 
 footer {
   font-family: 'Poppins', sans-serif;
@@ -72,86 +150,40 @@ footer {
   font-weight: 30;
   font-size: 30px;
   color: #ffffff;
-}
-
-.seccion {
-  display: flex;
-  justify-content: center;
-  padding: 320px;
-  /* Espacio alrededor del contenido */
-  display: grid;
-  margin-top: 80px;
-}
-
-.seccion3 {
   padding: 520px;
+  background-repeat: no-repeat;
   /* Espacio alrededor del contenido */
-  background-image: url(assets/img/footer.png);
+  background-image: url(./img/footer.png);
   background-size: cover;
   /* Cubrir todo el fondo */
   background-position: center bottom;
   /* Posición de la imagen (centrada en el fondo y en la parte inferior) */
   background-attachment: scroll;
   /* Fijar la imagen al fondo */
-
 }
+
+
+.cardContainer{
+/*Las tarjetas */
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 2.20rem;
+font-weight: bold;
+margin-bottom: 2rem;
+border-radius: 10px;
+margin-top: 15%;
+margin-left: 15%;
+list-style: none;
+}
+
+
 
 /*Las tarjetas */
 .card {
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  position: relative;
+  position:relative;
   overflow: hidden;
-  transition: heigth 0.5s ease;
-  flex-basis: calc(33.33% - 20px);
-  transition: flex-basis 0.5s;
-  transition: transform 0.3 ease;
-  width: 300px;
-  /*Ancho de mis card*/
-  margin: 6%;
-}
-
-/*Diseño de primera cara */
-.PrimeraCara {
-
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  /* Permite que los elementos li se envuelvan  de PrimeraCara*/
-}
-
-/*texto de la tarjeta primeracara*/
-.PrimeraCara h2 {
-  position: absolute;
-  bottom: 0;
-  /*Posiciona mi titulo en la parte inferior*/
-  text-align: center;
-  /*Posision de mi texto Titulo*/
-  font-size: 1.9vw;
-  /* tamaño de texto en relacion con el ancho de la ventana*/
-  color: #ffffff;
-  background-color: rgba(54, 52, 54, 0.671);
-  /*Fondo de Titulo de cuento*/
-  border-bottom-left-radius: 25%;
-  /* Borde de parte inferior izquierda*/
-  border-bottom-right-radius: 25%;
-  /* Borde de parte inferior derecha */
-  padding-left: 20px;
-  /* Relleno izquierdo del fondo */
-  width: 300px;
-  /*Ancho d emi fondo tranparente de titulo*/
-}
-
-/* Diseño de solo la imagen */
-#Img {
-  border: 5px solid rgb(255, 255, 255);
-  /*color de borde para imagen*/
-  width: 350px;
-  /*Ancho de mi imagen*/
-  height: 335px;
-  /*Largo d emi imagen*/
-  border-radius: 15%;
-  /* Tipo de brode de mi imagen*/
+  width: 400px;
+  list-style: none;
 }
 
 /*Animacion de tarjeta */
@@ -178,6 +210,7 @@ footer {
   overflow-y: auto;
   /* Agrega un scroll vertical si el contenido excede la altura */
 
+
 }
 
 /*hover es un pseudo-selector en CSS*/
@@ -185,12 +218,34 @@ footer {
   top: 0;
 }
 
+/*Diseño de primera cara */
+.PrimeraCara {
+  position: relative;
+}
+
+
+
+/* Diseño de solo la imagen */
+#Img {
+  /*color de borde para imagen*/
+  width: 370px;
+  /*Ancho de mi imagen*/
+  height: 335px;
+  /*Largo d emi imagen*/
+  border-radius: 8%;
+  /* Tipo de brode de mi imagen*/
+
+}
+
+
+
+
+
 /*Termina animacion de SegundaCara*/
 
 /*Se crea las colmnas*/
-.Contenedor {
+.filterContainer {
   border: 1px, solid black;
-  background: linear-gradient(to top, rgb(5, 22, 66) -10%, rgba(113, 159, 212, 0.856) 50%, rgba(254, 255, 255, 0.911) 100%);
   /* Degradado de color de fondo */
   padding: 20px;
   /*espacio interior de  */
@@ -205,74 +260,6 @@ footer {
 
 }
 
-.content {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0px auto;
-
-  /*FlexBoox*/
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.button-search {
-  border: none;
-  padding: 10px 20px 10px 0px;
-  margin: 12px 0px;
-  width: 200px;
-  background: transparent;
-  color: #fff;
-  outline-color: transparent;
-  font-weight: 15;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-}
-
-#main-header {
-  background: #00050a;
-  color: white;
-  height: auto;
-  font-size: 20px;
-  font-family: 'Poppins', sans-serif;
-  width: 100%;
-  /* hacemos que la cabecera ocupe el ancho completo de la página */
-  left: 0;
-  /* Posicionamos la cabecera al lado izquierdo */
-  top: 0;
-  /* Posicionamos la cabecera pegada arriba */
-  position: fixed;
-  /* Hacemos que la cabecera tenga una posición */
-  z-index: 9999;
-  /* Ajusta el valor según sea necesario para asegurar que esté por encima de todo el contenido */
-}
-
-label {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#filter {
-  font-weight: 15;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-  color: black;
-}
-
-#order {
-  font-weight: 15;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-  color: black;
-}
-
-#orderad {
-  font-weight: 15;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-  color: black;
-}
 
 .clearButton {
   font-family: 'Poppins', sans-serif;
@@ -281,14 +268,47 @@ label {
 
 }
 
+.backButton {
+  z-index: 2;
+position: relative;
+display: flex;
+color: var(--white);
+background-color: var(--blue);
+border: 0.15rem solid var(--white);
+border-radius: 9999rem;
+}
+
+
+.errorpageImg {
+  display: block; /* Asegura que la imagen sea un elemento de bloque */
+  margin: 0 auto; /* Aplica márgenes automáticos a ambos lados para centrarla horizontalmente */
+  max-width: 50%; /* Limita el ancho de la imagen al ancho del contenedor */
+  padding: 5%;
+}
+
+.errorTextPage {
+  position: absolute;
+  top: 75%; /* Cambia este valor para ajustar la posición del texto */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Cinzel", serif;
+  font-size: 60px;
+  color: #f1f1f1;
+  text-shadow:
+    1px 1px 2px rgb(1, 54, 58),
+    0 0 1em rgb(3, 88, 94),
+    0 0 0.2em rgb(49, 169, 248);
+  white-space: nowrap;
+}
+
 .ReadMore {
   display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
   font-family: "Cinzel", serif;
   font-size: 10px;
-  display: flex;
-  justify-content: center;
-  margin-top: -790px;
-  padding: 400px;
+  margin-top: 0px;
+  padding: 350px;
 }
 
 
