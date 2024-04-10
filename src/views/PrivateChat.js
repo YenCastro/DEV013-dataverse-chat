@@ -1,18 +1,17 @@
-import { homeButton } from "../components/ButtonHome.js";
+import { data } from '../data/dataset.js'; // Importa los datos primero
 import { footer } from "../components/footer.js";
 
-
-export const PrivateChat = () => {
-
+export const PrivateChat = (books) => {
     const container = document.createElement('div');
-    //buaca el cuento en los datos
-    const story = data.find(story => story.name === storyName); // lo que esta dentro d emi storyNmae sea igual al name de mi data 
+    // Busca el cuento en los datos
+    const story = data.find(story => story.name === books); // Llama a la función data para obtener el array de datos
     if(!story){
-      container.innerHtml =`<p> El cuento "${storyName}" no se encontro.</p>`
+      container.innerHTML = `<p> El cuento "${books}" no se encontró.</p>`;
     return container;
     }
+  
 
-//recuerda que ahora tu cuneto a sido almacenado en story
+//recuerda que ahora tu cuento a sido almacenado en story
     container.innerHTML = `   
     <body>
     <div class="container">

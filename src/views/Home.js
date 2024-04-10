@@ -1,9 +1,8 @@
-import { header } from "../components/header.js";
 import { data } from '../data/dataset.js';
-import { renderData } from "../components/renderData.js";
-import { homeButton } from "../components/buttonHome.js";
-import { filterMenu } from "../components/filters.js";
 import { footer } from "../components/footer.js";
+import { header } from "../components/header.js";
+import { filterMenu } from "../components/filters.js";
+import { renderData } from "../components/renderData.js";
 import { filterGender, filterByAge, sortData } from '../lib/dataFunctions.js';
 
 export const Home = () => {

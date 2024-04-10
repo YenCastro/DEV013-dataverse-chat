@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 
 body {
-  
+
   margin: 0;
   padding: 0;
   background-color: white;
@@ -16,7 +16,8 @@ body {
   font-family: 'Poppins', sans-serif;
   width: 100%;
   left: 0;
-  right: 0; /* Agregado para que la barra ocupe todo el ancho */
+  right: 0;
+  /* Agregado para que la barra ocupe todo el ancho */
   top: 0;
   position: fixed;
   z-index: 9999;
@@ -25,7 +26,8 @@ body {
 
   /*FlexBox*/
   display: flex;
-  justify-content: space-between; /* Alinea los elementos en los extremos */
+  justify-content: space-between;
+  /* Alinea los elementos en los extremos */
   align-items: center;
 }
 
@@ -51,28 +53,38 @@ body {
 }
 
 
-.seccionHome{
+.seccionHome {
   display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
-  justify-content: center; /* Centra los elementos verticalmente */
-  align-items: center; /* Centra los elementos horizontalmente */
+  flex-direction: column;
+  /* Alinea los elementos verticalmente */
+  justify-content: center;
+  /* Centra los elementos verticalmente */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
   background-image: url(/img/bienvenida.png);
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
   max-width: 1900px;
-  background-size: cover; /* Ajusta la imagen para cubrir todo el contenido visible */
-  background-position: center; /* Centra la imagen de fondo */
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el contenido visible */
+  background-position: center;
+  /* Centra la imagen de fondo */
 }
 
-.seccionHome h1{
-text-align: center; /* Centra el texto horizontalmente */
-margin: 0; /* Elimina los márgenes por defecto */
+.seccionHome h1 {
+  text-align: center;
+  /* Centra el texto horizontalmente */
+  margin: 0;
+  /* Elimina los márgenes por defecto */
 
 }
+
 .seccionHome p {
-  text-align: center; /* Centra el texto horizontalmente */
-  margin: 0; /* Elimina los márgenes por defecto */
+  text-align: center;
+  /* Centra el texto horizontalmente */
+  margin: 0;
+  /* Elimina los márgenes por defecto */
 
 }
 
@@ -103,44 +115,193 @@ p {
 }
 
 
-h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 30px;
+#Img{
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom: none; /* Esto elimina el borde inferior */;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 400px;
+  list-style: none;
+  margin-left: 15%;
+  margin-top: 10%;
+  position: relative;
 }
 
 .PrimeraCara h2 {
-  position: absolute;
-  bottom: -360px; /* Ajusta la distancia del texto desde la parte inferior */
-  left: 0; /* Alinea el texto a la izquierda */
-  right: 0; /* Ajusta el ancho del texto al ancho de la tarjeta */
-  text-align:left;
-  font-size: 1.9vw;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
   color: #ffffff;
   background-color: rgba(54, 52, 54, 0.671);
-  border-radius:20%;
-  padding: 33px;
-  width: 300px;
+  padding: 10px;
+  width: 380px;
+  margin-top: 0%;
+  border-bottom-left-radius: 30px; /* Borde redondeado en la esquina inferior izquierda */
+  border-bottom-right-radius: 30px; /* Borde redondeado en la esquina inferior derecha */
 }
 
 .ViewChat {
   position: absolute;
-  bottom: -70px; /* Ajusta la distancia desde la parte inferior de la tarjeta */
-  right: 40px; /* Ajusta la distancia desde el borde derecho de la tarjeta */
-  width: 50px; /* Ancho del botón de chat */
-  height: 50px; /* Altura del botón de chat */
-  color: #f78c00; /* Color del texto del botón de chat */
-  border: none; /* Elimina el borde del botón de chat */
-  border-radius: 100%; /* Borde redondeado del botón de chat */
+  bottom: 30px; /* Ajusta la distancia desde la parte inferior de la primera cara */
+  right: 10px; /* Ajusta la distancia desde el borde derecho de la primera cara */
+  width: 50px;
+  height: 50px;
+  color: #f78c00;
+  border: 2px solid #f0560f; /* Agrega un borde sólido de color naranja */
+  border-radius: 100%;
 }
 
-.buttonHomeIcon {
+.clearButton {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 17;
+  font-size: 17px;
+
+}
+
+.backButton {
   z-index: 2;
-position: relative;
-display: flex;
-color: var(--white);
-background-color: var(--blue);
-border: 0.15rem solid var(--white);
-border-radius: 9999rem;
+  position: relative;
+  display: flex;
+  color: var(--white);
+  background-color: var(--blue);
+  border: 0.15rem solid var(--white);
+  border-radius: 9999rem;
+}
+
+
+.errorpageImg {
+  display: block;
+  /* Asegura que la imagen sea un elemento de bloque */
+  margin: 0 auto;
+  /* Aplica márgenes automáticos a ambos lados para centrarla horizontalmente */
+  max-width: 50%;
+  /* Limita el ancho de la imagen al ancho del contenedor */
+  padding: 5%;
+}
+
+.errorTextPage {
+  position: absolute;
+  top: 75%;
+  /* Cambia este valor para ajustar la posición del texto */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Cinzel", serif;
+  font-size: 60px;
+  color: #f1f1f1;
+  text-shadow:
+    1px 1px 2px rgb(1, 54, 58),
+    0 0 1em rgb(3, 88, 94),
+    0 0 0.2em rgb(49, 169, 248);
+  white-space: nowrap;
+}
+
+/*Estilos de vista PrivateChat*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  /* 3 columnas de igual tamaño*/
+  margin-left: 200px;
+}
+
+/* estilos del grid layout*/
+/* boton de cerrado*/
+.cerrar {
+  width: 50px;
+  height: 30px;
+  margin-top: -20px;
+}
+
+/*contenedor de imagen*/
+.image-container {
+  grid-column: 1;
+  /*la imagen con la informacion ocupara la primera columna*/
+  background-color: #eaf2f3;
+  border: 1px solid black;
+  border-bottom-left-radius: 2%;
+  border-top-left-radius: 2%;
+}
+
+/*Diseño de el parrafo de inoformacion*/
+.image-container p {
+  color: #00050a;
+  margin: 80px;
+  width: 200px;
+  height: 170px;
+  text-align: center;
+  /* Alinea el texto al centro */
+  font-size: calc(1vw + 1vh);
+  /* Tamaño de fuente relativo al ancho y alto del contenedor */
+  background-color: #026cc265;
+  /* Color de fondo para el párrafo */
+  padding: 10px;
+  /* Añade un espacio alrededor del contenido del párrafo */
+  border: 1px solid black;
+}
+
+/*Diseño de solo imagen*/
+#imagen {
+  border-radius: 40%;
+  width: 230px;
+  height: 230px;
+  margin: 40px
+    /*margin-top: 30px;
+margin-left: 60px;*/
+}
+
+/*estilo para el contenedor del chat */
+.chat-container {
+  grid-column: 2 /span 2;
+  /*el contenedor ocupara desdde 2 columna hasta fina0l */
+  background-color: rgb(135, 157, 170);
+  text-align: center;
+  width: 240px;
+  height: 140px;
+  padding: 30%;
+  border: 1px solid black;
+}
+
+/*estilo para el contenedor del input y boton de enviar*/
+#input-container {
+  grid-column: 2 / span 2;
+  /* el contenedor del input y boton enviar sera desde la segunda columna hasta el final */
+  background-color: #bec3df;
+  margin-top: -70px;
+  height: 65px;
+  width: 760px;
+  border: 1px solid black;
+}
+
+#message-input {
+  position: relative;
+  /* Fija el elemento en la ventana del navegador */
+  right: -50px;
+  /* Posición a 20px del borde derecho */
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 540px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#send-button {
+  border-radius: 30%;
+  background-color: rgb(156, 127, 127);
+  position: relative;
+  right: -100px;
+  top: 35px;
+  transform: translateY(-125%);
+  width: 65px;
+  height: 30px;
 }
 
 
@@ -164,292 +325,4 @@ footer {
   /* Posición de la imagen (centrada en el fondo y en la parte inferior) */
   background-attachment: scroll;
   /* Fijar la imagen al fondo */
-}
-
-
-/*Animacion de tarjeta */
-.card:hover {
-  height: auto;
-  flex-basis: 450px;
-}
-
-.cardContainer{
-/*Las tarjetas */
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-gap: 2.20rem;
-font-weight: bold;
-margin-bottom: 2rem;
-border-radius: 10px;
-margin-top: 15%;
-margin-left: 15%;
-list-style: none;
-}
-
-
-
-/*Las tarjetas */
-.card {
-  position:relative;
-  overflow: hidden;
-  width: 400px;
-  list-style: none;
-}
-
-/* Diseño de la  data de SegundaCara */
-.card .SegundaCara {
-  /* position: absolute; */ 
-  top: 100%;
-  left: 0;
-  width: 350px;
-  /*Ancho de mi data SegundaCara*/
-  height: 335px;
-  background-color: rgba(252, 252, 252, 0.692);
-  padding: 20px;
-  transition: top 0.5s ease;
-  border-radius: 15px;
-  /*tipo de borodo para mi segundacara*/
-  overflow: hidden;
-  word-wrap: break-word;
-  overflow-y: auto;
-  /* Agrega un scroll vertical si el contenido excede la altura */
-
-
-}
-/*Se crea las colmnas*/
-.filterContainer {
-  border: 1px, solid black;
-  /* Degradado de color de fondo */
-  padding: 20px;
-  /*espacio interior de  */
-  display: flex;
-  /* desto es flexbox*/
-  flex-direction: row;
-  /*direciona los elementos en fila*/
-  flex-wrap: wrap;
-  /*ajusta los elementos a multipes linea*/
-  width: 100%;
-  /*amcho de mi contenedor*/
-
-}
-
-
-.clearButton {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 17;
-  font-size: 17px;
-
-}
-
-.backButton {
-  z-index: 2;
-position: relative;
-display: flex;
-color: var(--white);
-background-color: var(--blue);
-border: 0.15rem solid var(--white);
-border-radius: 9999rem;
-}
-
-
-.errorpageImg {
-  display: block; /* Asegura que la imagen sea un elemento de bloque */
-  margin: 0 auto; /* Aplica márgenes automáticos a ambos lados para centrarla horizontalmente */
-  max-width: 50%; /* Limita el ancho de la imagen al ancho del contenedor */
-  padding: 5%;
-}
-
-.errorTextPage {
-  position: absolute;
-  top: 75%; /* Cambia este valor para ajustar la posición del texto */
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Cinzel", serif;
-  font-size: 60px;
-  color: #f1f1f1;
-  text-shadow:
-    1px 1px 2px rgb(1, 54, 58),
-    0 0 1em rgb(3, 88, 94),
-    0 0 0.2em rgb(49, 169, 248);
-  white-space: nowrap;
-}
-
-.ReadMore {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  font-family: "Cinzel", serif;
-  font-size: 10px;
-  margin-top: 0px;
-  padding: 350px;
-}
-
-
-#scrollButton {
-  font-size: 39px;
-  color: rgb(252, 252, 252);
-  text-shadow:
-    /*text-shadow es una propiedad CSS que permite agregar sombras a texto*/
-    1px 1px 2px rgb(255, 115, 1),
-    0 0 1em rgb(243, 243, 243),
-    0 0 0.2em rgb(255, 249, 247);
-  background-color: rgb(255, 101, 44);
-  font-family: "Cinzel", serif;
-  border-radius: 5px;
-  border-color: #fff;
-  padding: 14px 28px;
-  cursor: pointer;
-
-}
-
-/*Seccioón Responsive*/
-/* Estilos para pantallas grandes aplicar estilos específicos cuando el ancho de la ventana del navegador es igual o mayor a 1200 píxeles. */
-@media screen and (min-width: 1200px) {
-  /* Aquí van tus estilos actuales */
-}
-
-/* Estilos para pantallas medianas */
-@media screen and (max-width: 1199px) {
-
-
-  .card {
-    flex-basis: calc(50% - 20px);
-    width: 45%;
-  }
-
-  .PrimeraCara h2 {
-    font-size: 1.3em;
-    width: 250px;
-  }
-
-  #Img {
-    width: 280px;
-    height: 270px;
-  }
-}
-
-/* Estilos para pantallas pequeñas */
-@media screen and (max-width: 767px) {
-  body {
-    padding-top: 20px;
-  }
-
-  /* Estilos para pantallas más pequeñas (por ejemplo, dispositivos móviles) */
-  @media only screen and (max-width: 768px) {
-    h1 {
-      font-size: 40px;
-      /* Tamaño de fuente más pequeño para pantallas pequeñas */
-      margin-top: -150px;
-      /* Ajuste del margen superior para centrar en pantallas pequeñas */
-      text-align: center;
-    }
-
-    p {
-      font-family: 'Poppins', sans-serif;
-      /* Mantén la misma fuente que tenías */
-      font-size: 20px;
-      /* Tamaño de fuente */
-      margin: 0 auto;
-      /* Centra vertical y horizontalmente */
-      max-width: 80%;
-      /* Limita el ancho del texto para que no se extienda demasiado */
-      text-align: center;
-      /* Centra el texto horizontalmente */
-      padding: 20%;
-    }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .ReadMore {
-    font-size: 8px;
-    /* Tamaño de fuente más pequeño para pantallas pequeñas */
-    margin-top: -300px;
-    /* Ajuste del margen superior para centrar en pantallas pequeñas */
-    padding: 1px;
-    /* Ajuste del padding para pantallas pequeñas */
-  }
-}
-
-/*Estilos de vista PrivateChat*/
-
-.container{
-  display: grid;
-  grid-template-columns: 1fr, 1fr, 1fr;/* 3 columnas de igual tamaño*/
- margin-left: 200px;
-}
-/* estilos del grid layout*/
-/* boton de cerrado*/
-.cerrar{
-  width: 50px;
-  height: 30px;
-  margin-top: -20px;
-}
-/*contenedor de imagen*/
-.image-container{
-  grid-column: 1;/*la imagen con la informacion ocupara la primera columna*/
-  background-color: #eaf2f3;
-  border: 1px solid black;
-  border-bottom-left-radius: 2%;
-  border-top-left-radius: 2%;
-}
-/*Diseño de el parrafo de inoformacion*/
-.image-container p {
-    color: #00050a;
-    margin: 80px;
-    width: 200px;
-    height: 170px;
-    text-align: center; /* Alinea el texto al centro */
-    font-size: calc(1vw + 1vh); /* Tamaño de fuente relativo al ancho y alto del contenedor */
-    background-color: #026cc265; /* Color de fondo para el párrafo */
-    padding: 10px; /* Añade un espacio alrededor del contenido del párrafo */
-    border: 1px solid black;
-}
-/*Diseño de solo imagen*/
-#imagen{
-border-radius: 40%;
-width: 230px;
-height: 230px;
-margin: 40px
-/*margin-top: 30px;
-margin-left: 60px;*/
-}
-/*estilo para el contenedor del chat */
-.chat-container{
-  grid-column: 2 /span 2; /*el contenedor ocupara desdde 2 columna hasta fina0l */
-  background-color:rgb(135, 157, 170);
-  text-align: center;
-  width: 240px;
-  height: 140px;
-  padding: 30%;
-  border: 1px solid black;
-}
-/*estilo para el contenedor del input y boton de enviar*/
-#input-container{
-  grid-column: 2 / span 2;/* el contenedor del input y boton enviar sera desde la segunda columna hasta el final */
-background-color: #bec3df;
-margin-top: -70px;
-height: 65px;
-width: 760px;
-border: 1px solid black;
-}
-#message-input{
-  position: relative; /* Fija el elemento en la ventana del navegador */
-  right: -50px; /* Posición a 20px del borde derecho */
-  margin-top: 20px;
-  background-color: rgb(255, 255, 255);
-  width: 540px;
-  height:30px;
-  border-radius: 10px;
-  border: 1px solid black;
-}
-#send-button{
-  border-radius: 30%;
-  background-color: rgb(156, 127, 127);
-  position: relative;
-  right: -100px;
-  top: 35px;
-  transform: translateY(-125%);
-width: 65px;
-height: 30px;
 }
