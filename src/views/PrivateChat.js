@@ -1,17 +1,20 @@
-
- import { data } from "../data/dataset.js";
-  import { footer } from "../components/footer.js";
+import { data } from '../data/dataset.js'; // Importa los datos primero
+import { footer } from "../components/footer.js";
 import { navigateTo } from "../router.js";
-export const PrivateChat = (story) => { //mi paremtro de entrada sera el nombre y de ahi tendra la data como en home storyname
+
+
+export const PrivateChat = (books) => {
     const container = document.createElement('div');
-//recuerda que ahora tu cuneto a sido almacenado en story
+    // Busca el cuento en los datos
+//recuerda que ahora tu cuento a sido almacenado en story
+
     container.innerHTML = `   
     <body>
     <div class="container">
       <button class="cerrar" aria-label="Cerrar">✖️</button>
       <div class="image-container">
-        <img src="${story.imageUrl}" id="imagen" alt="Imagen">
-        <p>${story.shortDescription} ${story.facts.curiousFact1}. ${story.facts.curiousFact2}</p>
+        <img src="${books.imageUrl}" id="imagen" alt="Imagen">
+        <p>${books.shortDescription} ${books.facts.curiousFact1}. ${books.facts.curiousFact2}</p>
       </div>
       <div class="chat-container">
         <div class="chat-messages" id="chat-messages">
@@ -28,6 +31,13 @@ export const PrivateChat = (story) => { //mi paremtro de entrada sera el nombre 
  container.querySelector('.cerrar').addEventListener('click',()=>{
  navigateTo('/Home');
 });
+
+ // Cambiar el nombre de la URL según la historia seleccionada
+ const urlParams = new URLSearchParams(window.location.search);
+ urlParams.set('books', books.id);
+ history.replaceState(null, '', `${window.location.pathname}?${urlParams}`);
+
+
  container.appendChild(footer()); 
     return container;
 }

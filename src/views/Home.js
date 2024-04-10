@@ -1,56 +1,75 @@
-import {data} from '../data/dataset.js'; // Importa los datos primero
-import { navigateTo } from "../router.js";
-import { header } from "../components/header.js";
+import { data } from '../data/dataset.js';
 import { footer } from "../components/footer.js";
-import { filterGender, filterByAge, sortData, clearFilters } from '../lib/dataFunctions.js';
+import { header } from "../components/header.js";
+import { filterMenu } from "../components/filters.js";
+import { renderData } from "../components/renderData.js";
+import { filterGender, filterByAge, sortData } from '../lib/dataFunctions.js';
+
+export const Home = () => {
+  const viewHome = document.createElement("main");
+  let newData = [...data];
+  const bookData = renderData(newData);
+  const filterElement = document.createElement('div');
+  filterElement.className = "filters";
+  filterElement.appendChild(filterMenu());
+  bookData.className = "cardContainer";
+  viewHome.append(header(), filterElement, bookData, footer());
 
 
-export function Home() {
-  const viewEl = document.createElement('div')
-  viewEl.innerHTML += ` 
-  <div class="seccion"> 
-  <h1>Cuantos Cuentos</h1> 
-  <p>¡Déjate llevar por la magia de la imaginación en cada página!</p>
-  </div>
-  <div class="ReadMore"> 
-  <button id="scrollButton">Deslizar</button>
-  </div>
-  `
-  // Agregamos una clase a el elemento viewEl
-  viewEl.classList.add('Contenedor')
-  for (let i = 0; i < data.length; i++) {
-    const element = data[i];
-    //alamcenaremos el element.name en storyNmae
-  const storyName = element.name;
-  const listItem = document.createElement("li");
-  listItem.classList.add("card");
-  listItem.setAttribute("itemscope", "");
-  listItem.setAttribute("itemtype", storyName);
-  const storyTitle = document.createElement("h2");
-  storyTitle.textContent = storyName;
-  storyTitle.addEventListener("click", () =>{
-    navigateTo(`/PrivateChat`, element);
+
+  // Componentes fijos
+  const selectElement = filterElement.querySelector("#filter");
+  const selectAge = filterElement.querySelector("#order");
+  const orderBook = filterElement.querySelector("#orderad");
+  const clearButton = filterElement.querySelector('[data-testid="button-clear"]')
+
+
+  // Hacemos migracion de funciones y eventos del DOM
+  // Evento change para el elemento select, género.
+  selectElement.addEventListener("change", () => {
+    const selectedGender = selectElement.value;
+    const resultFilter = filterGender(data, selectedGender)
+
+    bookData.innerHTML = "";
+    bookData.appendChild(renderData(resultFilter));
   });
-  const image = document.createElement("img");
-  image.setAttribute("id", "image");
-  image.setAttribute("src", element.imageUrl);
-  image.setAttribute("alt", storyName);
-  image.setAttribute("itemprop", "image");
 
-  const div = document.createElement("div");
-  div.classList.add("PriemraCara");
-  div.appendChild(storyTitle);
-  div.appendChild(image);
 
-  listItem.appendChild(div);
-  viewEl.appendChild(listItem);
+  // Evento change por Filtro rango de edad 
+  selectAge.addEventListener("change", () => {
+    const range = selectAge.value;
 
-  }
+    const resultAge = filterByAge(data, range)
+    bookData.innerHTML = "";
+    bookData.appendChild(renderData(resultAge));
+  });
 
-  document.body.appendChild(header());
-  document.body.appendChild(footer());
+
+  // Evento change para el ordenamiento.
+  orderBook.addEventListener("change", (event) => {
+    newData = sortData(newData, "name", event.target.value); // Ordenamos los datos filtrados por nombre
+
+    bookData.innerHTML = '';   // Limpiamos el contenido anterior y renderizamos los datos ordenados
+    bookData.appendChild(renderData(newData));
+  });
+
+  //CleanButton
+  clearButton.addEventListener('click', function () {
+    bookData.innerHTML = "";//limpia contenedor
   
-  return viewEl;
+    newData=[...data];
+    bookData.appendChild(renderData(newData)); // Renderiza de nuevo la data original
+    selectElement.selectedIndex = 0;
+    selectAge.selectedIndex = 0;
+    orderBook.selectedIndex = 0;
+    console.log(orderBook.selectedIndex);
+  });
+  return viewHome;
+}
 
-  
-};
+
+
+
+
+
+
