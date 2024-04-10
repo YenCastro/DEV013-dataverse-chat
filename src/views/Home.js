@@ -29,7 +29,7 @@ export function Home() {
   const storyTitle = document.createElement("h2");
   storyTitle.textContent = storyName;
   storyTitle.addEventListener("click", () =>{
-    navigateTo(`/PrivateChat`);
+    navigateTo(`/PrivateChat`, element);
   });
   const image = document.createElement("img");
   image.setAttribute("id", "image");
