@@ -2,7 +2,7 @@
 
 export const getApiKey = () => {
    const getStorage = localStorage.getItem("apiKey");
-   return getStorage;  
+   //return getStorage;  
    console.log(getStorage);
   // Implementa el código para obtener la API KEY desde Local Storage
   //la función getApiKey se encarga de obtener la API key almacenada en el almacenamiento local del navegador

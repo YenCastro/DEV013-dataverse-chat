@@ -33,9 +33,9 @@ export const PrivateChat = (books) => {
 });
 
  // Cambiar el nombre de la URL según la historia seleccionada
- const urlParams = new URLSearchParams(window.location.search);
- urlParams.set('books', books.id);
- history.replaceState(null, '', `${window.location.pathname}?${urlParams}`);
+// const urlParams = new URLSearchParams(window.location.search);
+ //urlParams.set('books', books.id);
+ //history.replaceState(null, '', `${window.location.pathname}?${urlParams}`);
 
 
  container.appendChild(footer()); 
