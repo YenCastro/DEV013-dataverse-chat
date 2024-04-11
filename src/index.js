@@ -20,17 +20,14 @@ const viewContainer = document.getElementById('root');
 setRoutes(routes);
 setRootElement(viewContainer);
 document.addEventListener("DOMContentLoaded", (event) => {
-  onURLChange(event.target.location.pathname);
+  onURLChange(event.currentTarget.location.pathname);
+  console.log(event.currentTarget.location.pathname);
 });
 
 
 // Trae el  HTML y ejecuta los scripts.
-document.addEventListener("DOMContentLoaded", (event) =>{
-    onURLChange(event.target.location.pathname);
 
 window.addEventListener("popstate", (event) => {
-    onURLChange(event.target.location.pathname);
+    onURLChange(event.currentTarget.location.pathname);
     });
-});
-
 

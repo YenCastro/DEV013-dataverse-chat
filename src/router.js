@@ -34,13 +34,15 @@ export const setRoutes = (newRoutesValue) => {
 
 // Actualizar el historial de navegador a partir del contenido visitado en el sitio web.
 export const navigateTo = (pathname, props = {}) => {
+  console.log(window.location.hostname);
+  console.log(pathname);
   const URLVisited = window.location.hostname + pathname;
-  history.pushState({}, "", URLVisited);
+  window.history.pushState({}, "", URLVisited);
   renderView(pathname, props);
 };
 
 
 // Analiza la ubicación de la ruta y los parámetros de búsqueda // convierte los parámetros de búsqueda en un objeto // renderiza la vista con la ruta y el objeto
 export const onURLChange = (pathname) => {
-  renderView (pathname);
+  navigateTo(pathname);
 }
