@@ -2,7 +2,7 @@
 import { Home } from './views/Home.js';
 import { PrivateChat } from './views/PrivateChat.js';
 import { Error } from './views/Error.js';
-import { apik } from './views/ApiKey.js';
+import { Apik } from './views/APIKey.js';
 import { setRoutes, setRootElement, onURLChange } from './router.js';
 
 
@@ -11,7 +11,7 @@ const routes = {
   "": Home,
   "/Home": Home,
   "/PrivateChat": PrivateChat,
-  "/api": apik,
+  "/Api": Apik,
   "/Error": Error,
 };
 

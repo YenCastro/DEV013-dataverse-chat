@@ -10,7 +10,7 @@ export const getApiKey = () => {
  };
  
  export const setApiKey = (key) => {
-  localStorage.setItem("apiKey", key);//  El método setItem() es una función del objeto localStorage
+  localStorage.setItem("apiKey", key);//  setItem() es una función del objeto localStorage
   //almacenar datos en el almacenamiento local del navegador web. 
-  // Implementa el código para guardar la API KEY en Local Storage
+  // Implementa el código para guardar la API KEY en Local StorageS
  };

@@ -36,7 +36,7 @@ export const setRoutes = (newRoutesValue) => {
 export const navigateTo = (pathname, props = {}) => {
   console.log(window.location.hostname);
   console.log(pathname);
-  const URLVisited = window.location.hostname + pathname;
+  const URLVisited = window.location + pathname;
   window.history.pushState({}, "", URLVisited);
   renderView(pathname, props);
 };

@@ -12,6 +12,7 @@ export const PrivateChat = (books) => {
     <body>
     <div class="container">
       <button class="cerrar" aria-label="Cerrar">✖️</button>
+      <button class="apikey" > API KEY  </button>
       <div class="image-container">
         <img src="${books.imageUrl}" id="imagen" alt="Imagen">
         <p>${books.shortDescription} ${books.facts.curiousFact1}. ${books.facts.curiousFact2}</p>
@@ -24,6 +25,7 @@ export const PrivateChat = (books) => {
       <div id="input-container">
         <input type="text" id="message-input" placeholder="Escribe un mensaje...">
         <button id="send-button">Enviar</button>
+        
       </div>
       
     </div>
@@ -32,6 +34,9 @@ export const PrivateChat = (books) => {
  navigateTo('/Home');
 });
 
+container.querySelector('.apikey').addEventListener('click',()=>{
+  navigateTo('/Apik');
+ });
  // Cambiar el nombre de la URL según la historia seleccionada
 // const urlParams = new URLSearchParams(window.location.search);
  //urlParams.set('books', books.id);

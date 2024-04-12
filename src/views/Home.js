@@ -52,6 +52,10 @@ export const Home = () => {
     bookData.innerHTML = '';   // Limpiamos el contenido anterior y renderizamos los datos ordenados
     bookData.appendChild(renderData(newData));
   });
+  
+  container.querySelector('.apikey').addEventListener('click',()=>{
+    navigateTo('/Apik');
+   });
 
   //CleanButton
   clearButton.addEventListener('click', function () {
