@@ -37,10 +37,10 @@ export const PrivateChat = (books) => {
 container.querySelector('.apikey').addEventListener('click',()=>{
   navigateTo('/ApiKey');
  });
- // Cambiar el nombre de la URL según la historia seleccionada
-// const urlParams = new URLSearchParams(window.location.search);
- //urlParams.set('books', books.id);
- //history.replaceState(null, '', `${window.location.pathname}?${urlParams}`);
+ // Cambiar el nombre de la URL según la historia seleccionada con serchparams
+const urlParams = new URLSearchParams(window.location.search);
+ urlParams.set('books', books.id);
+ history.replaceState(null, '', `${window.location.pathname}?${urlParams}`);
 
 
  container.appendChild(footer()); 

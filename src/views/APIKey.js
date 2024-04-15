@@ -16,7 +16,7 @@ export const ApiKey = () =>{
     } 
     buttonApikey.addEventListener("click", function(){
         setApiKey(inputApikey.value);
-        inputApikey.value ="";//limpia el campo de entrada despues del boton ingresar 
+        inputApikey.value ="";//limpia el campo de entrada despues del boton ingresar primero la ingresa y despues la borra en el almacen
     });
     return viewapi;
 }
