@@ -34,8 +34,6 @@ export const setRoutes = (newRoutesValue) => {
 
 // Actualizar el historial de navegador a partir del contenido visitado en el sitio web.
 export const navigateTo = (pathname, props = {}) => {
-  console.log(window.location.hostname);
-  console.log(pathname);
   const URLVisited = window.location + pathname;
   window.history.pushState({}, "", URLVisited);
   renderView(pathname, props);
