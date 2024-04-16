@@ -4,7 +4,7 @@ import { header } from "../components/header.js";
 import { filterMenu } from "../components/filters.js";
 import { renderData } from "../components/renderData.js";
 import { filterGender, filterByAge, sortData } from '../lib/dataFunctions.js';
-
+//import { ApiKey } from './ApiKey.js';
 export const Home = () => {
   const viewHome = document.createElement("main");
   let newData = [...data];
@@ -14,6 +14,7 @@ export const Home = () => {
   filterElement.appendChild(filterMenu());
   bookData.className = "cardContainer";
   viewHome.append(header(), filterElement, bookData, footer());
+
 
 
   // Componentes fijos
@@ -51,6 +52,10 @@ export const Home = () => {
     bookData.innerHTML = '';   // Limpiamos el contenido anterior y renderizamos los datos ordenados
     bookData.appendChild(renderData(newData));
   });
+  // investiga por que lo has puesto aqui 
+  //container.querySelector('.apikey').addEventListener('click',()=>{
+    //navigateTo('/Apik');
+   //});
 
   //CleanButton
   clearButton.addEventListener('click', function () {
