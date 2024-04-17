@@ -1,7 +1,7 @@
 import { footer } from "../components/footer.js";
 import { navigateTo } from "../router.js";
 import { communicateWithOpenAI } from '../lib/openAIApi.js';
-import {data} from'../data/dataset.js';
+import { data } from '../data/dataset.js';
 
 // Función para mostrar mensajes (debes definirla en otro lugar)
 function displayMessage(message) {
@@ -15,8 +15,8 @@ function displayMessage(message) {
 export const PrivateChat = (books) => {// Busca el cuento en los datos
   // Recuerda que ahora tu cuento ha sido almacenado en story
   const container = document.createElement('div');
-container.id = "PrivateChat" ;
-const findbook = data.find((booksId) => booksId.id === books.id)
+  container.id = "PrivateChat";
+  const findbook = data.find((booksId) => booksId.id === books.id)
 
   container.innerHTML = `   
     <div class="container">
@@ -48,27 +48,18 @@ const findbook = data.find((booksId) => booksId.id === books.id)
   });
 
   // Agrega el event listener al botón de enviar mensaje
-  container.querySelector('#send-button').addEventListener('click',  () => {//tiene un cuerpo asíncrono, lo que significa que puede contener operaciones asíncronas, como llamadas a funciones que devuelven promesas 
+  container.querySelector('#send-button').addEventListener('click', () => {//tiene un cuerpo asíncrono, lo que significa que puede contener operaciones asíncronas, como llamadas a funciones que devuelven promesas 
     const userInput = container.querySelector('#message-input').value;//Cuando el usuario hace clic en el botón de enviar mensaje, se ejecuta una función de evento async.
-console.log(findbook.name)
-    //el usuario ha ingresado en el campo de entrada
-    // Crea un mensaje para enviar a OpenAI
-   // const openAIMessage = {// se crea crea un objeto openAIMessage este objeto tiene dos propiedades:
-     // role: 'user', //role el papel del emisor del mensaje
-      //content: userInput //ontenido del mensaje que el usuario ha ingresado.
-    //};
+    console.log(findbook.name)
+  
+    communicateWithOpenAI(findbook.name, userInput)//La palabra clave await se usa para esperar a que una promesa se resuelva
+      .then((response) => {// Muestra la respuesta en el chat
+        displayMessage(response.choices[0].message.content);// Si la llamada a la función communicateWithOpenAI es exitosa el código intenta mostra la respuesta en el chat
+      })
 
-    // Llama a la función para comunicarse con OpenAI
-    //: El código está envuelto en un bloque try-catch
-     
-      communicateWithOpenAI( findbook.name, userInput)//La palabra clave await se usa para esperar a que una promesa se resuelva
-.then((response)=>{// Muestra la respuesta en el chat
-    displayMessage(response.choices[0].message.content);// Si la llamada a la función communicateWithOpenAI es exitosa el código intenta mostra la respuesta en el chat
-  })
-
-      .catch (error=>{  //Si se produce un error, en lugar de que el programa se bloquee, se ejecutará el código dentro del bloque catch, donde el error se imprimirá en la consola.
-      console.error('Error al comunicarse con OpenAI:', error);
-    })
+      .catch(error => {  //Si se produce un error, en lugar de que el programa se bloquee, se ejecutará el código dentro del bloque catch, donde el error se imprimirá en la consola.
+        console.error('Error al comunicarse con OpenAI:', error);
+      })
   });
 
   container.appendChild(footer());
