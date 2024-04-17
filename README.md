@@ -1,9 +1,7 @@
 # Dataverse Chat
 
 ## Índice
-
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
+* [1. Resumen del proyecto](#1-resumen-del-proyecto)
 * [3. Consideraciones generales](#3-consideraciones-generales)
 * [4. Funcionalidades](#4-funcionalidades)
 * [5. Consideraciones técnicas](#5-consideraciones-técnicas)
@@ -15,35 +13,15 @@
 
 ***
 
-## 1. Preámbulo
+## 1. Resumen del proyecto
 
-En nuestro día a día, las aplicaciones web son como amigas
-inseparables. Desde las redes sociales hasta las herramientas de
-trabajo, las usamos todo el tiempo. Pero lo que hace que este
-momento sea realmente especial es que estas aplicaciones nos pueden
-abrir una puerta a algo asombroso: la interacción con inteligencia
-artificial.
+Bienvenido a Cuantos Cuentos, un espacio donde la magia de la lectura se hace presente y se transforma en una experiencia inolvidable para madres y sus pequeños aventureros. En Cuantos Cuentos, nos enfocamos en simplificar y emocionar la búsqueda y exploración de cuentos, permitiendo que tanto niños como adultos encuentren rápidamente las historias perfectas para disfrutar juntos.
 
-¿Qué tal si pudiéramos conversar con alguien que vivió hace más de
-cien años o incluso con los personajes de nuestras series y
-películas favoritas o con entidades que normalmente no pueden hablar
-como por ejemplo planetas o animales? La inteligencia artificial nos
-puede ayudar a entender el pasado y a conectarnos con figuras
-históricas, así como a sumergirnos en mundos ficticios.
+Nuestra página web ofrece una amplia variedad de cuentos, desde los clásicos que han resistido el paso del tiempo hasta los más populares en la actualidad. ¿Quieres sumergirte en cuentos que han cautivado a generaciones enteras, o prefieres descubrir las emocionantes historias que están ganando popularidad en la actualidad? Con Cuantos Cuentos, tienes la libertad de explorar y descubrir cuentos que se adapten a tus gustos y necesidades.
 
-![Preview app](https://github-production-user-asset-6210df.s3.amazonaws.com/123121338/271433237-2bd1477b-15ef-49d4-9fcb-226b3263c46a.png)
+Gracias a nuestra herramienta de filtrado y visualización de datos, podrás navegar fácilmente a través de nuestra colección y encontrar los cuentos que más te interesan. ¿Prefieres buscar por género, edad recomendada o tema? ¡No hay problema! Con solo unos clics, podrás personalizar tu experiencia de lectura y descubrir nuevas aventuras que te encantarán.
 
-## 2. Resumen del proyecto
-
-En este proyecto convertirás la aplicación desarrollada
-en Dataverse en una
-[Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application),
-manteniendo las funcionalidades de visualizar, filtrar, ordenar y
-calcular alguna estadística, adicionando una nueva vista para
-consultar información detallada de cada personaje/entidad y agregando
-la posibilidad de interactuar con un personaje/entidad o todos ellos
-a través de un sistema de chat impulsado por la
-[API de OpenAI](https://openai.com/product).
+Así que adelante, comienza tu viaje de lectura con Cuantos Cuentos y crea recuerdos mágicos con tus pequeños. Sumérgete en un mundo de imaginación y aventura, donde cada página es una nueva oportunidad para explorar, aprender y soñar juntos. ¡Bienvenido a Cuantos Cuentos, donde los cuentos cobran vida y las aventuras nunca terminan!
 
 ### Los objetivos generales de este proyecto son los siguientes
 
@@ -57,9 +35,9 @@ vistas de la aplicación
 
 ## 3. Consideraciones generales
 
-* Este proyecto se debe resolver en duplas.
+* Este proyecto se ejecutó en dupla.
 
-* El rango de tiempo estimado para completar el proyecto es de 4 a 5 Sprints.
+* El rango de tiempo para finalizar el proyecto fue de 5 sprints.
 
 * La lógica del proyecto debe estar implementada completamente en JavaScript
   (ES6+), HTML y CSS. Para este proyecto **no está permitido** utilizar
@@ -89,90 +67,20 @@ vistas de la aplicación
 
 ## 4. Funcionalidades
 
-Como entregable final tendrás una Single Page Application (SPA) que permita,
-además de **visualizar la data, filtrarla, ordenarla y calcular alguna
-estadística** tal como se hizo en Dataverse, acceder a una página de detalle
-de cada personaje y poder _interactuar_ con
-los personajes o entidades del set de data que utilizaste anteriormente.
+* Bienvenida: Al acceder a Cuantos Cuentos, serás recibido con una cálida bienvenida en la parte superior de la página, que te invita a explorar una amplia selección de cuentos para niños y sus madres.
+Bienvenida
 
-Aquí definimos en más detalle las funcionalidades mínimas que debe tener:
+* Barra de Filtros y Ordenamiento: En la parte superior de la página, encontrarás filtros intuitivos que te permiten refinar tu búsqueda según el género del cuento y el rango de edad recomendado para los lectores. Además de los filtros, tienes la opción de ordenar los cuentos de manera alfabética, ya sea ascendente (A-Z) o descendente (Z-A), lo que facilita aún más la navegación y la búsqueda de cuentos específicos.
+Barra de filtros
 
-* La aplicación debe ser _responsive_
-* La aplicación debe ser una SPA con múltiples vistas:
-  - Implementar un sistema de enrutamiento que permita la navegación
-    dentro de la aplicación.
-  - Cada vista de la aplicación debe ser cargada dinámicamente
-    mediante JavaScript.
-  - Asegurarse de que la URL se actualice de manera acorde a la vista
-    cargada al igual que el `title` del documento (la pestaña del navegador).
-  - La aplicación debe ser capaz de cargar la vista correspondiente a
-    la URL actual al iniciar la aplicación.
-* La aplicación debe mantener las funcionalidades de Dataverse: visualizar,
-  filtrar, ordenar y calcular estadística de la data.
-* Al hacer clic en una tarjeta de personaje/entidad, la aplicación debe
-  redirigirse a una vista **con su propia URL** que muestre la información
-  detallada sobre ese personaje/entidad en particular
-* La aplicación debe permitir a la usuaria configurar la API Key para
-  interactuar con la API de Open AI
-* Usando la API de Open AI, la aplicación debe permitir al usuario
-  interactuar con un personaje/entidad a través de un chat.
-  Por ejemplo, si usamos la data de ejemplo de Dataverse, correspondiente
-  a las mujeres con mayores contribuciones a la programación en la historia,
-  una usuaria puede establecer una conversación
-  interactiva con
-  [Ada Lovelace](https://es.wikipedia.org/wiki/Ada_Lovelace)
-  a través del sistema de chat, obteniendo
-  información sobre sus logros, desafíos y contribuciones a la informática.
-  La inteligencia artificial de OpenAI permite que las respuestas sean
-  informativas y personalizadas según las preguntas de los usuarios.
+* Explorar los Cuentos: En el cuerpo de la página, encontrarás una matriz de 24 tarjetas, cada una representando un cuento diferente. Al posicionar el cursor sobre una tarjeta, se mostrará información detallada del cuento, incluyendo el rango de edad recomendado, el género, una curiosidad y otras características destacadas.
 
-```text
-Usuaria: "Hola, Ada. Cuéntame más sobre tus contribuciones a la informática."
+* Interacción Intuitiva: Con esta presentación visual y la información detallada al posicionar el cursor sobre cada tarjeta, la página brinda una experiencia interactiva y envolvente tanto para las madres como para los pequeños. Pueden explorar los cuentos, descubrir nuevos favoritos y tomar decisiones informadas sobre qué historias leer juntos.
+Muestra de datos
 
-Ada Lovelace (AI de OpenAI): "¡Hola! Claro, estaré encantada de hablar sobre eso.
-Mis contribuciones más destacadas se relacionan con el trabajo junto a Charles Babbage
-en el diseño de la Máquina Analítica. Además, desarrollé el primer algoritmo destinado
-a ser procesado por una máquina, lo que me convierte en la primera programadora de la historia.
-¿Hay algo más en particular que te gustaría saber?"
-
-Usuaria: "¡Eso es fascinante! ¿Qué desafíos enfrentaste en ese tiempo?"
-
-Ada Lovelace (AI de OpenAI): "En ese tiempo, enfrenté varios desafíos, uno de los
-principales fue la limitación de recursos y la falta de reconocimiento del potencial
-de la Máquina Analítica. También tuve que superar las restricciones sociales de
-la época, ya que las mujeres tenían un acceso limitado a la educación en
-matemáticas y ciencias. Sin embargo, mi pasión por la matemática y la visión
-de lo que estas máquinas podrían lograr me impulsaron a seguir adelante."
-```
-
-* La aplicación debe  permitir al usuario interactuar de manera simultánea
-  con **todos** los personajes/entidades a través de un chat:
-  - Esta funcionalidad debe cargarse en la URL `/panel`
-  - La usuaria puede ingresar su pregunta o mensaje para todos los
-    personajes/entidades en un cuadro de texto y enviarlo con un botón
-  - El mensaje de la usuaria debe ser ajustado para cada personaje/entidad,
-    con el objetivo que este genere una respuesta basada en su personalidad
-    y conocimiento
-  - Las respuestas de todos los personajes se muestran de acuerdo al orden
-    respuesta.
-  - Indicar visualmente cuando uno o varios personajes/entidades esten
-    generando una respuesta al mensaje enviado
-* La aplicación debe informar a la usuaria los errores que puedan surgir al
-  interactuar con la API, como por ejemplo alcanzar la cuota de tokens por
-  minuto o cualquier otro error relacionado con la API. Debería
-  proporcionarse una descripción clara de la causa del problema y posibles
-  soluciones.
-
-Para que los chats anteriores puedan funcionar, es esencial que la aplicación
-se integre con la IA a través de la API de OpenAI. Para ello, el equipo de
-Laboratoria te proporcionará una API Key que la usuaria deberá poder ingresar
-en la aplicación que tu construirás.
-
-_Nota_: puedes revisar esta [implementación](https://laboratoria-dataverse-talks.netlify.app/)
-de ejemplo, cuyo principal objetivo es mostrarte cómo se vería la
-funcionalidad de chat en tu aplicación, más no tomes el diseño como
-referencia para tu proyecto, siente libre de hacer volar tu imaginación
-diseñando tu propia interfaz.
+* Chat con Open IA: Con Cuantos Cuentos: Los usuarios pueden interactuar con un chatbot alimentado por la API de Cuantos Cuentos para obtener respuestas inteligentes sobre libros infantiles. Pueden hacerlo de manera individual, explorando un libro específico.
+  
+¡Y eso es todo! Con Cuantos Cuentos, la experiencia de encontrar y disfrutar de cuentos para niños se vuelve fácil, divertida y memorable para todas las familias.
 
 ## 5. Consideraciones técnicas
 
