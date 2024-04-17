@@ -21,7 +21,6 @@ export const PrivateChat = (books) => {// Busca el cuento en los datos
   container.innerHTML = `   
     <div class="container">
       <button class="cerrar" aria-label="Cerrar">✖️</button>
-      <button class="apikey" > API KEY  </button>
       <div class="image-container">
       <h4> ${findbook.name} </4>
         <img src="${findbook.imageUrl}" id="imagen" alt="${findbook.name}">
@@ -43,9 +42,6 @@ export const PrivateChat = (books) => {// Busca el cuento en los datos
     navigateTo('/Home');
   });
 
-  container.querySelector('.apikey').addEventListener('click', () => {
-    navigateTo('/ApiKey');
-  });
 
   // Agrega el event listener al botón de enviar mensaje
   container.querySelector('#send-button').addEventListener('click', () => {//tiene un cuerpo asíncrono, lo que significa que puede contener operaciones asíncronas, como llamadas a funciones que devuelven promesas 

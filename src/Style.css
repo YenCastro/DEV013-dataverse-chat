@@ -164,7 +164,25 @@ h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 17;
   font-size: 17px;
+}
 
+
+.backButton {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  color: var(--white);
+  background-color: var(--blue);
+  border: 0.15rem solid var(--white);
+  border-radius: 9999rem;
+}
+
+
+.apikey{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 17;
+  font-size: 17px;
+ 
 }
 
 .backButton {
