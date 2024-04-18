@@ -1,5 +1,5 @@
 import { sortData, filterByAge } from '../src/lib/dataFunctions.js';
-import { data as testData } from './data.js';
+import { dataTest as testData } from '../src/data/data.js';
 
 // Se crea primer test para la funcioón de ordenamiento.
 describe('sortData function', () => {

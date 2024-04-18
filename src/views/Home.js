@@ -54,19 +54,18 @@ export const Home = () => {
   });
   // investiga por que lo has puesto aqui 
   //container.querySelector('.apikey').addEventListener('click',()=>{
-    //navigateTo('/Apik');
-   //});
+  //navigateTo('/Apik');
+  //});
 
   //CleanButton
   clearButton.addEventListener('click', function () {
     bookData.innerHTML = "";//limpia contenedor
-  
-    newData=[...data];
+
+    newData = [...data];
     bookData.appendChild(renderData(newData)); // Renderiza de nuevo la data original
     selectElement.selectedIndex = 0;
     selectAge.selectedIndex = 0;
     orderBook.selectedIndex = 0;
-    console.log(orderBook.selectedIndex);
   });
   return viewHome;
 }

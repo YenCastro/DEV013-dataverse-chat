@@ -1,5 +1,3 @@
-import { navigateTo } from "./../router.js"
-
 export const header = () => {
   const viewEl = document.createElement('div')
   viewEl.classList.add('seccionHome')

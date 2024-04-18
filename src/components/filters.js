@@ -1,3 +1,6 @@
+import { navigateTo } from "../router.js";
+
+
 export const filterMenu = () => {
   const filterList = document.createElement("div");
   filterList.innerHTML = `
@@ -38,10 +41,10 @@ export const filterMenu = () => {
   
       </div>
       `
+  filterList.querySelector('.apikey').addEventListener('click', () => {
+    navigateTo('/ApiKey');
+  });
 
-      filterList.querySelector('.apikey').addEventListener('click', () => {
-        navigateTo('/ApiKey');
-      });
 
   return filterList;
 }

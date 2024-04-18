@@ -1,4 +1,3 @@
-import { data } from '../data/dataset.js'; 
 import { navigateTo } from "../router.js";
 
 
@@ -21,19 +20,17 @@ export const renderData = (data) => {
         </div>
         </div>`;
 
-        listCards.appendChild(card); 
+    listCards.appendChild(card);
 
-        const firstFace = card.querySelector(".PrimeraCara");
-        const secondFace = card.querySelector(".SegundaCara");
-        const viewChat = card.querySelector("#ViewChat");
-        const storyName = books.name;
-
-        viewChat.addEventListener("click", function() {
-          navigateTo("/PrivateChat", books);
-          return viewChat;
-        });
-
-});
-    return listCards;
+    const viewChat = card.querySelector("#ViewChat");
   
-  };
+
+    viewChat.addEventListener("click", function () {
+      navigateTo("/PrivateChat", books);
+      return viewChat;
+    });
+
+  });
+  return listCards;
+
+};
