@@ -23,6 +23,8 @@ Gracias a nuestra herramienta de filtrado y visualización de datos, podrás nav
 
 Así que adelante, comienza tu viaje de lectura con Cuantos Cuentos y crea recuerdos mágicos con tus pequeños. Sumérgete en un mundo de imaginación y aventura, donde cada página es una nueva oportunidad para explorar, aprender y soñar juntos. ¡Bienvenido a Cuantos Cuentos, donde los cuentos cobran vida y las aventuras nunca terminan!
 
+
+
 ### Los objetivos generales de este proyecto son los siguientes
 
 * Desarrollar una [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
