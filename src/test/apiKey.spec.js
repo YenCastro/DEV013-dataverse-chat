@@ -1,6 +1,6 @@
 // test/apiKey.spec.js
 /* eslint-disable */
-import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
+import { getApiKey, setApiKey } from '../lib/apiKey.js';
 
 describe('getApiKey', () => {
 
