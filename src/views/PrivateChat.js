@@ -1,6 +1,6 @@
 import { footer } from "../components/footer.js";
 import { navigateTo } from "../router.js";
-import { communicateWithOpenAI } from '../lib/openAIApi.js';
+import { communicateWithOpenAI } from '../Lib/openAIApi.js';
 import { data } from '../data/dataset.js';
 
 // Función para mostrar mensajes en el contenedor de chat
