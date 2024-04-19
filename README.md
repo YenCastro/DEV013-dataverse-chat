@@ -5,11 +5,9 @@
 * [3. Consideraciones generales](#3-consideraciones-generales)
 * [4. Funcionalidades](#4-funcionalidades)
 * [5. Consideraciones técnicas](#5-consideraciones-técnicas)
-* [6. Hitos](#6-hitos)
-* [7. Criterios de aceptación mínimos del proyecto](#7-criterios-de-aceptación-mínimos-del-proyecto)
-* [8. Objetivos de aprendizaje](#8-objetivos-de-aprendizaje)
-* [9. Pistas, tips y lecturas complementarias](#9-pistas-tips-y-lecturas-complementarias)
-* [10. Consideraciones para pedir tu Project Feedback](#10-consideraciones-para-pedir-tu-project-feedback)
+* [6. Historias de usuario y metodología](#6-Historias-de-usuario-y-metodología)
+* [7. Prototipos](#7-Prototipos)
+* [8. Autoras](#7-Autoras)
 
 ***
 
@@ -174,6 +172,7 @@ necesites para tu aplicación.
 Esta carpeta contiene los tests de tus funciones y componentes. Por ejemplo
 los tests de dataFunctions deben estar aquí.
 
+
 ## 6. Historia de usuario y metodología
 
 * Simulaciones de Usuario: Se llevaron a cabo simulaciones para comprender mejor cómo las usuarias interactuarían con el producto en diferentes escenarios.
@@ -188,28 +187,31 @@ los tests de dataFunctions deben estar aquí.
 
 * Prototipo baja fidelidad mobile
 
+![PrototipoBajafidelidadMobile](https://github.com/YenCastro/DEV013-dataverse-chat/assets/152881188/93522d6f-cb23-4c6d-9d2f-20ae1a50309e)
 
 * Prototipo baja fidelidad web
-
   
-* Prototipo alta fidelidad mobile
-
-  
-* Prototipo alta fidelidad mobile
-
-  
+  https://github.com/YenCastro/DEV013-dataverse-chat/assets/152881188/779fcaca-eefd-499b-a959-09b79dfbfe1a
 
 #### Prototipo de alta fidelidad
 
-Lo siguiente es diseñar tu Interfaz de Usuaria (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, etc.
+* Prototipo alta fidelidad mobile
+  
+  https://github.com/YenCastro/DEV013-dataverse-chat/assets/152881188/6bb1eef1-c384-4be9-987c-41b773cac6c4
+  
+* Prototipo alta fidelidad mobile
+  
+https://github.com/YenCastro/DEV013-dataverse-chat/assets/152881188/4d02b39e-c290-4271-b1ce-0af473d01621
 
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
+## 8. Autoras
 
-Recuerda pedir feedback de tu prototipo a tus compañeras y/o coaches.
+## Autoras
+- Julieta Mora (https://github.com/yulietma)
+- Yenny Castro (https://github.com/YenCastro)
+
+## Contacto
+
+Si tienes preguntas, sugerencias o simplemente quieres decir hola, no dudes en contactarnos:
+
+- Correo electrónico: castroyenny74@gmail.com y julietamoraangeles1@gmail.com
+- LinkedIn: (https://www.linkedin.com/in/yenny-castro-063978273/) y 
