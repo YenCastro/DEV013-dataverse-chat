@@ -3,17 +3,24 @@ import { navigateTo } from "../router.js";
 import { communicateWithOpenAI } from '../lib/openAIApi.js';
 import { data } from '../data/dataset.js';
 
-// Función para mostrar mensajes (debes definirla en otro lugar)
-function displayMessage(message) {
-  // Código para mostrar el mensaje en el chat
+// Función para mostrar mensajes en el contenedor de chat
+function displayMessage(message, isUserMessage) {
   const chatMessagesContainer = document.querySelector('.chat-messages');
   const messageElement = document.createElement('div');
+  
+  // Asignar clases dependiendo del tipo de mensaje
+  if (isUserMessage) {
+    messageElement.classList.add('user-message');
+  } else {
+    messageElement.classList.add('api-message');
+  }
+  
   messageElement.textContent = message;
-  chatMessagesContainer.appendChild(messageElement);//mensaje creado se agrega como hijo del contenedor de mensajes de chat utilizando 
+  chatMessagesContainer.appendChild(messageElement);
+
 }
 
-export const PrivateChat = (books) => {// Busca el cuento en los datos
-  // Recuerda que ahora tu cuento ha sido almacenado en story
+export const PrivateChat = (books) => {
   const container = document.createElement('div');
   container.id = "PrivateChat";
   const findbook = data.find((booksId) => booksId.id === books.id)
@@ -21,16 +28,13 @@ export const PrivateChat = (books) => {// Busca el cuento en los datos
   container.innerHTML = `   
     <div class="container">
       <button class="cerrar" aria-label="Cerrar">✖️</button>
-      <button class="apikey" > API KEY  </button>
       <div class="image-container">
-      <h4> ${findbook.name} </4>
+        <h4>${findbook.name}</h4>
         <img src="${findbook.imageUrl}" id="imagen" alt="${findbook.name}">
-        <p>${findbook.shortDescription} ${findbook.facts.curiousFact1}. ${findbook.facts.curiousFact2}</p>
+        <p id="informationBooks">${findbook.shortDescription} ${findbook.facts.curiousFact1}. ${findbook.facts.curiousFact2}</p>
       </div>
       <div class="chat-container">
-        <div class="chat-messages" id="chat-messages">
-          <!-- Aquí se mostrarán los mensajes -->
-        </div>
+        <div class="chat-messages" id="chat-messages"></div>
       </div>
       <div id="input-container">
         <input type="text" id="message-input" placeholder="Escribe un mensaje...">
@@ -43,23 +47,23 @@ export const PrivateChat = (books) => {// Busca el cuento en los datos
     navigateTo('/Home');
   });
 
-  container.querySelector('.apikey').addEventListener('click', () => {
-    navigateTo('/ApiKey');
-  });
 
-  // Agrega el event listener al botón de enviar mensaje
-  container.querySelector('#send-button').addEventListener('click', () => {//tiene un cuerpo asíncrono, lo que significa que puede contener operaciones asíncronas, como llamadas a funciones que devuelven promesas 
-    const userInput = container.querySelector('#message-input').value;//Cuando el usuario hace clic en el botón de enviar mensaje, se ejecuta una función de evento async.
-    console.log(findbook.name)
+  container.querySelector('#send-button').addEventListener('click', () => {
+    const userInput = container.querySelector('#message-input').value;
   
-    communicateWithOpenAI(findbook.name, userInput)//La palabra clave await se usa para esperar a que una promesa se resuelva
-      .then((response) => {// Muestra la respuesta en el chat
-        displayMessage(response.choices[0].message.content);// Si la llamada a la función communicateWithOpenAI es exitosa el código intenta mostra la respuesta en el chat
-      })
+    // Mostrar el mensaje del usuario en el chat y marcarlo como del usuario
+    displayMessage(userInput, true); // true indica que es un mensaje del usuario
+  
+    // Limpiar el input después de enviar el mensaje
+    container.querySelector('#message-input').value = '';
 
-      .catch(error => {  //Si se produce un error, en lugar de que el programa se bloquee, se ejecutará el código dentro del bloque catch, donde el error se imprimirá en la consola.
-        console.error('Error al comunicarse con OpenAI:', error);
+    // Comunicarse con OpenAI y mostrar la respuesta en el chat
+    communicateWithOpenAI(findbook.name, userInput)
+      .then((response) => {
+        const aiResponse = response.choices[0].message.content;
+        displayMessage(aiResponse);
       })
+    
   });
 
   container.appendChild(footer());

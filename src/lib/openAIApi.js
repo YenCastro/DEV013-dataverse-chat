@@ -22,13 +22,12 @@ export const communicateWithOpenAI = (cardNameSystem, input) => {//sedeclara com
       ],
     }),
   })
-   
+
     .then((response) => response.json())
     .then((data) => {
       return data
     })
-    .catch(error => {
-      console.log(error)
-    })
-return responsFech
+   
+
+  return responsFech
 };

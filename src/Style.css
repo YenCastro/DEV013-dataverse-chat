@@ -101,7 +101,7 @@ h1 {
   padding: -60px;
 }
 
-.Subtitulo{
+.Subtitulo {
   font-family: 'Poppins', sans-serif;
   margin-top: -490px;
   font-size: 30px;
@@ -115,10 +115,12 @@ h1 {
 }
 
 
-#Img{
+#Img {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  border-bottom: none; /* Esto elimina el borde inferior */;
+  border-bottom: none;
+  /* Esto elimina el borde inferior */
+  ;
 }
 
 .cardContainer {
@@ -145,18 +147,23 @@ h1 {
   padding: 10px;
   width: 380px;
   margin-top: 0%;
-  border-bottom-left-radius: 30px; /* Borde redondeado en la esquina inferior izquierda */
-  border-bottom-right-radius: 30px; /* Borde redondeado en la esquina inferior derecha */
+  border-bottom-left-radius: 30px;
+  /* Borde redondeado en la esquina inferior izquierda */
+  border-bottom-right-radius: 30px;
+  /* Borde redondeado en la esquina inferior derecha */
 }
 
 .ViewChat {
   position: absolute;
-  bottom: 30px; /* Ajusta la distancia desde la parte inferior de la primera cara */
-  right: 10px; /* Ajusta la distancia desde el borde derecho de la primera cara */
+  bottom: 30px;
+  /* Ajusta la distancia desde la parte inferior de la primera cara */
+  right: 10px;
+  /* Ajusta la distancia desde el borde derecho de la primera cara */
   width: 50px;
   height: 50px;
-  color: #f78c00;
-  border: 2px solid #f0560f; /* Agrega un borde sólido de color naranja */
+  color: #2362AC;
+  border: 2px solid #0056b3;
+  /* Agrega un borde sólido de color naranja */
   border-radius: 100%;
 }
 
@@ -167,15 +174,12 @@ h1 {
 
 }
 
-.backButton {
-  z-index: 2;
-  position: relative;
-  display: flex;
-  color: var(--white);
-  background-color: var(--blue);
-  border: 0.15rem solid var(--white);
-  border-radius: 9999rem;
+.apikey {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 17;
+  font-size: 17px;
 }
+
 
 
 .errorpageImg {
@@ -204,11 +208,11 @@ h1 {
   white-space: nowrap;
 }
 
-/*Estilos de vista PrivateChat*/
+/* Estilos de vista PrivateChat */
 .container {
+  margin-top: 5%;
   display: grid;
-  grid-template-columns: 1fr, 1fr, 1fr;
-  /* 3 columnas de igual tamaño*/
+  grid-template-columns: min-content minmax(auto, 1fr); /* Ancho mínimo para el contenedor de imagen y ancho flexible para el contenedor de chat */
   margin-left: 200px;
 }
 
@@ -218,33 +222,53 @@ h1 {
   width: 50px;
   height: 30px;
   margin-top: -20px;
+  background-color: #AECCEF;
+  /* Color de fondo del botón */
+  color: #000000;
+  /* Color del texto */
+  border: none;
+  /* Elimina el borde */
+  border-radius: 5px;
+  /* Redondea las esquinas */
+  cursor: pointer;
+  /* Cambia el cursor al pasar sobre el botón */
+  font-size: 14px;
+  /* Tamaño del texto */
+  font-weight: bold;
+  /* Negrita */
+  text-transform: uppercase;
+  /* Convierte el texto a mayúsculas */
+  transition: background-color 0.3s ease;
+  /* Transición suave al cambiar el color de fondo */
 }
 
-/*contenedor de imagen*/
+.cerrar:hover {
+  background-color: #2362AC;
+  /* Color de fondo al pasar el cursor */
+}
+
+/* Contenedor de imagen */
 .image-container {
-  grid-column: 1;
-  /*la imagen con la informacion ocupara la primera columna*/
-  background-color: #eaf2f3;
-  border: 1px solid black;
+  grid-column: 1 / 2; /* Ocupa la primera columna */
+  background-color: #E0DFDF;
+  box-shadow: 0 0 20px 10px #2362AC;
   border-bottom-left-radius: 2%;
   border-top-left-radius: 2%;
+  width: 400px; /* Ancho reducido del contenedor de imagen */
 }
 
-/*Diseño de el parrafo de inoformacion*/
-.image-container p {
+/*Diseño de el parrafo de informacion*/
+#informationBooks {
   color: #00050a;
   margin: 80px;
   width: 200px;
   height: 170px;
-  text-align: center;
-  /* Alinea el texto al centro */
-  font-size: calc(1vw + 1vh);
-  /* Tamaño de fuente relativo al ancho y alto del contenedor */
-  background-color: #026cc265;
-  /* Color de fondo para el párrafo */
-  padding: 10px;
-  /* Añade un espacio alrededor del contenido del párrafo */
-  border: 1px solid black;
+  text-align: left; /* Alinea el texto a la izquierda */
+  text-justify: inter-word; /* Justifica el texto con puntos al final */
+  font-size: calc(1vw + 1vh); /* Tamaño de fuente relativo al ancho y alto del contenedor */
+  background-color: #AECCEF; /* Color de fondo para el párrafo */
+  padding: 10px; /* Añade un espacio alrededor del contenido del párrafo */
+  box-shadow: 0 0 20px 10px #2362AC; /* Sombra con desenfoque */
 }
 
 /*Diseño de solo imagen*/
@@ -252,67 +276,93 @@ h1 {
   border-radius: 40%;
   width: 230px;
   height: 230px;
-  margin: 40px
-    /*margin-top: 30px;
-margin-left: 60px;*/
+  margin: 40px;
+  margin-left: 75px;
 }
 
-/*estilo para el contenedor del chat */
-.chat-container {
-  grid-column: 2 /span 2;
-  /*el contenedor ocupara desdde 2 columna hasta fina0l */
-  background-color: rgb(135, 157, 170);
+#informationBooks h4{ 
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: #000000;
+  text-shadow:
+    1px 1px 2px rgb(0, 204, 255),
+    0 0 1em rgb(6, 122, 255),
+    0 0 0.2em rgb(69, 49, 248);
   text-align: center;
-  width: 240px;
-  height: 140px;
-  padding: 30%;
-  border: 1px solid black;
 }
 
-/*estilo para el contenedor del input y boton de enviar*/
+/* Estilo para el contenedor del chat */
+.chat-container {
+  grid-column: 2 / -1; /* Ocupa desde la segunda columna hasta el final */
+  text-align: center;
+  width: calc(100% - 200px); /* Ancho del contenedor de chat se calcula restando el ancho del contenedor de imagen */
+  background-color: #E0DFDF;
+  box-shadow: 0 0 10px 5px #2362AC;
+  overflow-y: scroll;
+}
+
+.chat-messages {
+  width: 100%; /* Asegura que el contenedor de mensajes ocupe todo el ancho */
+}
+
+
+/* Estilo para mensajes de la API (izquierda) */
+.chat-messages .api-message {
+  background-color: #AECCEF; /* Color de fondo para mensajes de la API */
+  margin-right: 20px; /* Margen derecho para separar los mensajes */
+  padding: 5px; /* Añadir relleno para un mejor aspecto visual */
+  border-radius: 5px; /* Agregar bordes redondeados */
+}
+
+/* Estilo para mensajes del usuario (derecha) */
+.chat-messages .user-message {
+  background-color: #2362AC; /* Color de fondo para tus mensajes */
+  margin-left: 20px; /* Margen izquierdo para separar los mensajes */
+  padding: 5px; /* Añadir relleno para un mejor aspecto visual */
+  border-radius: 5px; /* Agregar bordes redondeados */
+}
+
+/* Estilo para el contenedor del input y botón de enviar */
 #input-container {
-  grid-column: 2 / span 2;
-  /* el contenedor del input y boton enviar sera desde la segunda columna hasta el final */
-  background-color: #bec3df;
+  grid-column: 2 / -1; /* Ocupa desde la segunda columna hasta el final */
+  background-color: #2362AC;
   margin-top: -70px;
-  height: 65px;
-  width: 760px;
-  border: 1px solid black;
+  height: 70px;
+  width: calc(100% - 200px); /* Ancho del input-container se calcula restando el ancho del contenedor de imagen */
 }
 
 #message-input {
   position: relative;
-  /* Fija el elemento en la ventana del navegador */
-  right: -50px;
-  /* Posición a 20px del borde derecho */
-  margin-top: 20px;
-  background-color: rgb(255, 255, 255);
-  width: 540px;
-  height: 30px;
+  margin-top: 10px;
+  background-color: #AECCEF;
+  width: calc(100% - 100px); /* Ancho del input se calcula restando el ancho del botón de enviar */
+  height: 50px;
   border-radius: 10px;
-  border: 1px solid black;
 }
 
 #send-button {
-  border-radius: 30%;
-  background-color: rgb(156, 127, 127);
-  position: relative;
-  right: -100px;
-  top: 35px;
-  transform: translateY(-125%);
-  width: 65px;
-  height: 30px;
+  border-radius: 20px;
+  /* Redondea las esquinas del botón */
+  background-color: #AECCEF;
+  /* Azul vibrante */
+  color: rgb(0, 0, 0);
+  /* Texto en color blanco para mayor contraste */
+  border: none;
+  /* Elimina el borde del botón */
+  padding: 10px 20px;
+  /* Aumenta el espacio interior del botón */
+  font-size: 16px;
+  /* Tamaño del texto */
+  cursor: pointer;
+  /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease;
+  /* Agrega una transición suave al cambiar el color de fondo */
 }
 
-
-footer {
-  font-family: 'Poppins', sans-serif;
-  text-align: start;
-  font-weight: 30;
-  font-size: 30px;
-  color: #ffffff;
+#send-button:hover {
+  background-color: #0056b3;
+  /* Color de fondo del botón al pasar el cursor */
 }
-
 
 .seccion3 {
   padding: 520px;
@@ -325,4 +375,82 @@ footer {
   /* Posición de la imagen (centrada en el fondo y en la parte inferior) */
   background-attachment: scroll;
   /* Fijar la imagen al fondo */
+  font-family: 'Poppins', sans-serif;
+  text-align: start;
+  font-weight: 30;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+  height: 600px;
+  /* Ajusta la altura según sea necesario */
+}
+
+.content2 {
+  width: 500px;
+  /* Ancho del cuadrado */
+  padding: 20px;
+  /* Espaciado interno */
+  background-color: #f3f3f3;
+  /* Color de fondo del cuadrado */
+  border-radius: 10px;
+  /* Redondea las esquinas para formar un cuadrado */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+}
+
+/* Estilos para el título de la clave */
+.keytitulo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  /* Color de texto */
+  margin-bottom: 10px;
+}
+
+/* Estilos para el párrafo de descripción */
+.keydescripcion {
+  font-size: 16px;
+  color: #666;
+  /* Color de texto */
+  margin-bottom: 20px;
+}
+
+/* Estilos para el campo de entrada de la clave */
+.inputApi {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  /* Borde del campo */
+  border-radius: 5px;
+  /* Redondea las esquinas */
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de guardar */
+.apiSaveButton {
+  background-color: #2362AC;
+  /* Color de fondo */
+  color: #fff;
+  /* Color de texto */
+  border: none;
+  /* Elimina el borde */
+  padding: 10px 20px;
+  /* Espaciado interno */
+  border-radius: 5px;
+  /* Redondea las esquinas */
+  cursor: pointer;
+  /* Cambia el cursor al pasar sobre el botón */
+  font-size: 16px;
+}
+
+.apiSaveButton:hover {
+  background-color: #0056b3;
+  /* Color de fondo al pasar el cursor */
 }

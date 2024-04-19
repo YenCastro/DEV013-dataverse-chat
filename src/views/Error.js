@@ -1,6 +1,3 @@
-import { homeButton } from "../components/buttonHome.js";
-import { footer } from "../components/footer.js";
-
 export const Error = () => {
   const ErrorPage = document.createElement("div");
   ErrorPage.className = "errorText";

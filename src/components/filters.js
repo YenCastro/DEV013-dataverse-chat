@@ -1,6 +1,9 @@
+import { navigateTo } from "../router.js";
+
+
 export const filterMenu = () => {
-    const filterList = document.createElement("div");
-    filterList.innerHTML = `
+  const filterList = document.createElement("div");
+  filterList.innerHTML = `
         <!-- Categoria menu -->
         <label for="filter">Filtrar por: </label>
         <select data-testid="select-filter" name="filter" id="filter">
@@ -33,9 +36,15 @@ export const filterMenu = () => {
       
         <label for="button">
           <button class="clearButton" id="clearButton"    data-testid="button-clear" type="button">Limpiar</button>
-        </label>
+          <button class="apikey" > API KEY  </button>
+          </label>
   
       </div>
       `
-      return filterList;
-    }
+  filterList.querySelector('.apikey').addEventListener('click', () => {
+    navigateTo('/ApiKey');
+  });
+
+
+  return filterList;
+}
