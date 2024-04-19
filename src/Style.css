@@ -242,10 +242,7 @@ h1 {
   /* Transición suave al cambiar el color de fondo */
 }
 
-.cerrar:hover {
-  background-color: #2362AC;
-  /* Color de fondo al pasar el cursor */
-}
+
 
 /* Contenedor de imagen */
 .image-container {

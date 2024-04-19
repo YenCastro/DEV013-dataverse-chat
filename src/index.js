@@ -25,6 +25,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // Trae el  HTML y ejecuta los scripts.
 
-window.addEventListener("popstate", (event) => {
-  onURLChange(event.currentTarget.location.pathname);
+window.addEventListener("popstate", (event) => {// window es el objeto global del navegador
+  onURLChange(event.currentTarget.location.pathname);//es el callback que se ejecutará cuando se dispare el evento popstate.
 });

@@ -1,6 +1,7 @@
 // test/apiKey.spec.js
 /* eslint-disable */
-import { getApiKey, setApiKey } from '../lib/apiKey.js';
+import { getApiKey, setApiKey} from '../src/Lib/apiKey.js'
+
 
 describe('getApiKey', () => {
 
@@ -11,32 +12,22 @@ describe('getApiKey', () => {
   });
 
   it('Si no existe una Key', () => {
-    const nullKey ="";// este vacio 
-    setApiKey(nullKey);
-    expect(getApiKey()).toBe("");//debe ser igual al valor de  const = nullkey
+    localStorage.clear();// este vacio 
+    //getApiKey(testKey);
+    expect(getApiKey()).toBe(null);//debe ser igual al valor de  const = nullkey
   });
 });
-const localStorageMog = (()=>{
-  let store = {};
-  return{
-    getItem: key => store[key], 
-    setItem: (key, value) => {store[key]= value.toString();},
-    clear = ()=>{store={};}
-  };
-})();
-
-Object.defineProperty(window, 'localStorage', {value: localStorageMog});
 
 describe('setApiKey', () => {
 
   it('debería establecer correctamente la API Key', () => {// Desarrolla el test correspondiente aquí
    const testKey = "456123ada";
    setApiKey(testKey);
-   expect(localStorage.getItem("apikey")).toBe(testKey);
+   expect(localStorage.getItem("apiKey")).toBe(testKey);
   });
   it('si no hay ApiKey guardada', ()=>{
     const testKey="";//Establece una clave de prueba vacía.
     setApiKey(testKey);
-    expect(localStorage.getItem("apikey")).toBe(testKey);//el valor almacenad sea igual a la clave de prueba vacía.
+    expect(localStorage.getItem("apiKey")).toBe(testKey);//el valor almacenad sea igual a la clave de prueba vacía.
   });
 });
